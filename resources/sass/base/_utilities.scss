@@ -1,0 +1,471 @@
+// Text Colors
+.tf-text-primary {
+    color: $tf-color-primary;
+}
+
+.tf-text-secondary {
+    color: $tf-color-secondary;
+}
+
+.tf-text-success {
+    color: $tf-color-success;
+}
+
+.tf-text-info {
+    color: $tf-color-info;
+}
+
+.tf-text-warning {
+    color: $tf-color-warning;
+}
+
+.tf-text-danger {
+    color: $tf-color-danger;
+}
+
+// Background Colors
+.tf-bg-primary {
+    background-color: $tf-color-primary;
+
+    ion-icon {
+        color: $tf-color-white;
+    }
+}
+
+.tf-bg-primary-accent, .tf-bg-icon-primary-accent {
+    background-color: $tf-color-primary-contrast;
+
+    ion-icon {
+        color: $tf-color-primary;
+    }
+}
+
+.tf-bg-secondary {
+    background-color: $tf-color-secondary;
+}
+
+.tf-bg-secondary-accent {
+    background-color: $tf-color-secondary-contrast;
+}
+
+.tf-bg-success {
+    background-color: $tf-color-success;
+}
+
+.tf-bg-success-accent, .tf-bg-icon-success-accent {
+    background-color: $tf-color-success-contrast;
+
+    ion-icon {
+        color: $tf-color-success;
+    }
+}
+
+.tf-bg-info {
+    background-color: $tf-color-info;
+}
+
+.tf-bg-warning {
+    background-color: $tf-color-warning;
+}
+
+.tf-bg-warning-accent, .tf-bg-icon-warning-accent {
+    background-color: $tf-color-warning-contrast;
+
+    ion-icon {
+        color: $tf-color-warning;
+    }
+}
+
+.tf-bg-danger {
+    background-color: $tf-color-danger;
+}
+
+.tf-bg-danger-accent, .tf-bg-icon-danger-accent {
+    background-color: $tf-color-danger-contrast;
+
+    ion-icon {
+        color: $tf-color-danger;
+    }
+}
+
+// Breadcrumb
+.breadcrumb-nav {
+    margin-bottom: 30px;
+    .breadcrumb {
+        --bs-breadcrumb-divider: '>';
+    }
+}
+
+// Image & Avatar Sizes
+.avatar-circle, .tf-img-circle  {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-circle-md, .tf-img-circle-md {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-circle-lg, .tf-img-circle-lg {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-circle-xl, .tf-img-circle-xl {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-circle-xxl, .tf-img-circle-xxl {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+// Icon Background Sizes
+.tf-bg-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-icon {
+        font-size: 24px;
+    }
+}
+
+.tf-bg-icon-md {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-icon {
+        font-size: 32px;
+    }
+}
+
+.tf-bg-icon-lg {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-icon {
+        font-size: 40px;
+    }
+
+    img {
+        width: 50px;
+    }
+}
+
+.tf-bg-icon-xl {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-icon {
+        font-size: 56px;
+    }
+
+    img {
+        width: 75px;
+    }
+}
+
+.tf-bg-icon-xxl {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-icon {
+        font-size: 132px;
+    }
+}
+
+// Off Canvass
+.tf-merchant-offwrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 0;
+}
+
+.tf-merchant-off-divider {
+    font-size: 16px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    color: $tf-color-gray;
+}
+
+.tf-merchant-off-menu {
+    padding-left: 0;
+
+    li {
+        margin-bottom: 12px;
+
+        a {
+            display: flex;
+            align-items: center;
+            grid-gap: 16px;
+        }
+    }
+}
+
+// Overlays
+#sidebar-overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.6;
+    display: none;
+    z-index: 9;
+    background-color: $tf-color-black;
+}
+
+// SVG Wrapper
+.tf-svg-wrapper {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+// Grid Alignment
+.d-grid-content-center {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+}
+
+// Grid Gap
+.tf-grid-gap-1 {
+    grid-gap: 1rem;
+}
+
+// Flex Alignment
+.tf-d-flex-content-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tf-d-fg-center-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Cash In
+.tf-over-counter-wrapper {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    grid-gap: 12px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 16px;
+    height: 100%;
+}
+
+// Text Symbol
+.tf-symbol-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tf-symbol-circle-md {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        font-size: 16px;
+    }
+}
+
+.tf-symbol-circle-lg {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        font-size: 26px;
+    }
+}
+
+// Bank Images Sizes
+.tf-img-bank {
+    width: 40px;
+}
+
+// Position Absolute
+.tf-position-right {
+    position: absolute;
+    right: 10px;
+}
+
+// Empty State
+.tf-empty-state-wrapper {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    margin-top: 100px;
+
+    .tf-empty-state-heading {
+        margin-top: 20px;
+    }
+
+    .tf-empty-state-text {
+        width: 80%;
+        margin-top: 16px;
+        margin-bottom: 24px;
+        color: $tf-color-gray;
+    }
+}
+
+// Notification
+.tf-notif-wrapper {
+    padding: 0;
+
+    li {
+        border-bottom: 1px solid #d4d4d4;
+        padding: 14px 0;
+
+        .tf-notif-title {
+            min-width: 95%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        .tf-notif-date {
+            color: $tf-color-gray;
+        }
+    }
+}
+
+// Border Colors and Styles
+.tf-border-dashed-primary {
+    border: 1px dashed;
+    border-color: $tf-color-primary;
+}
+
+.tf-border-dashed-warning {
+    border: 1px dashed;
+    border-color: $tf-color-warning;
+}
+
+// Box Icon
+.tf-box-icon-primary {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #53b2fd 0, #297bfa 50%);
+    border-color: #eae9e9;
+    border-style: solid;
+    border-width: 0px;
+    box-shadow: #297bfa 0 15px 22px -15px;
+    border-radius: 8px;
+    width: 35px;
+    height: 35px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-icon {
+        font-size: 21px;
+        color: $tf-color-white;
+    }
+}
+
+// Verified Badge
+.tf-mobile-profile-badge {
+    display: none;
+    .tf-verified-badge {
+        position: absolute;
+        bottom: -8px;
+        left: 50px;
+    
+        ion-icon {
+            font-size: 22px;
+            color: $tf-color-primary;
+        }
+    }
+}
+
+// Fixed BS Position
+.fixed-bottom {
+    z-index: 0 !important;
+    border-radius: 1px !important;
+}
+
+// Chips
+.chip-wrapper {
+    display: flex;
+    align-items: center;
+    grid-gap: 8px;
+    background-color: $tf-color-white;
+    border: 1px solid #eee;
+    width: fit-content;
+    padding: 2px 12px 2px 2px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+
+    img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}

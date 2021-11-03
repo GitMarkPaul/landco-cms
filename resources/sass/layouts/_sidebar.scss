@@ -1,0 +1,85 @@
+.tf-app {
+    .tf-aside {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: 100vh;
+        background-color: $tf-color-white;
+        padding-top: 20px;
+        z-index: 6;
+
+        .tf-aside-menu {
+            margin-top: 80px;
+            padding: 0;
+
+            .tf-aside-items {
+                padding-bottom: 24px;
+                
+                a {
+                    display: flex;
+                    align-items: center;
+                    grid-gap: 16px;
+
+
+                    .tf-aside-chevron-down {
+                        position: absolute;
+                        right: 32px;
+                    }
+                }
+
+                .tf-aside-collapse {
+                    margin-left: 8px;
+                    margin-top: 20px;
+                    list-style: circle;
+
+                    li {
+                        margin-bottom: 16px;
+
+                        span {
+                            font-weight: 400;
+                            color: $tf-color-black;
+                        }
+                    }
+                }
+            }
+
+            .tf-aside-heading {
+                font-size: 13px;
+                font-weight: 600;
+                padding-bottom: 24px;
+                color: $tf-color-gray;
+            }
+
+            .tf-mobile-logout {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                padding-left: 14px;
+                padding-right: 14px;
+                display: none;
+
+                a {
+                    ion-icon {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .tf-active {
+                span, ion-icon {
+                    font-weight: 600;
+                    color: $tf-color-primary;
+                }
+            }
+        }
+    }
+
+    .tf-main {
+        padding-top: 90px;
+        padding-bottom: 90px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

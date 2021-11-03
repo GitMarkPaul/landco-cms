@@ -1,0 +1,15 @@
+.tf-img-filtered {
+    filter: grayscale(100%);
+}
+
+.tf-barcode-img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.tf-qrcode-img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}

@@ -1,0 +1,21 @@
+.select2-dropdown {
+    border: 1px solid #eee !important;
+}
+
+.tf-app {
+
+    .select2-container--default .select2-selection--single {
+        border: none;
+        background-color: transparent;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        line-height: normal;
+    }
+
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: none !important;
+    background-color: #eee;
+}

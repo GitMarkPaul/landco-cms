@@ -1,0 +1,153 @@
+.tf-card {
+    position: relative;
+    background-color: $tf-color-white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: $tf-card-box-shadow;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+
+    .card-img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .card-img-overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 12px;
+
+        .card-title {
+            font-size: 1.275rem;
+        }
+    }
+
+    .card-body {
+        .tf-card-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            grid-gap: 12px;
+
+            ion-icon {
+                font-size: 24px;
+            }
+        }
+
+        .tf-profile-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .tf-profile-container {
+                display: flex;
+
+                .tf-profile-holder {
+                    font-size: 24px;
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .tf-profile-details {
+                    display: grid;
+                    margin-left: 24px;
+
+                    .tf-profile-details-info {
+                        display: flex;
+                        grid-gap: 1rem;
+
+                        .tf-profile-flex-items {
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tf-card-plain {
+    position: relative;
+    background-color: $tf-color-white;
+    border-radius: 12px;
+}
+
+// Cards Color
+.tf-card-primary {
+    background-color: $tf-color-primary;
+    color: $tf-color-white;
+}
+
+.tf-card-primary-accent {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #53b2fd 0, #297bfa 50%);
+    border-color: #eae9e9;
+    border-radius: .7em;
+    border-style: solid;
+    border-width: 0px;
+    box-shadow: #297bfa 0 15px 22px -15px;
+    color: $tf-color-white;
+}
+
+.tf-card-warning {
+    background-color: $tf-color-warning;
+}
+
+.tf-card-warning-accent {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #fce29c 0,  #fad46b 50%);
+    border-radius: .7em;
+    border-style: solid;
+    border-width: 0px;
+    box-shadow:#efcf7a 0 15px 22px -15px;
+}
+
+.tf-card-success {
+    background-color: $tf-color-success;
+    color: $tf-color-white;
+}
+
+.tf-card-success-accent {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #13ec9c 0, #0fbd7d 50%);
+    border-color: #eae9e9;
+    border-radius: .7em;
+    border-style: solid;
+    border-width: 0px;
+    box-shadow: #0b8457 0 15px 22px -15px;
+    color: $tf-color-white;
+}
+
+.tf-card-danger {
+    background-color: $tf-color-danger;
+    color: $tf-color-white;
+}
+
+.tf-card-danger-accent {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #ff8080 0, #ff5959 50%);
+    border-color: #eae9e9;
+    border-radius: .7em;
+    border-style: solid;
+    border-width: 0px;
+    box-shadow: #ff4d4d 0 15px 22px -15px;
+    color: $tf-color-white;
+}
+
+.tf-card-info {
+    background-color: $tf-color-info;
+}

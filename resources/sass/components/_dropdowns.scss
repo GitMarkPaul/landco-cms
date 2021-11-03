@@ -1,0 +1,28 @@
+.tf-app {
+    .dropdown-menu {
+        border: none;
+        box-shadow: $tf-card-box-shadow;
+    
+        .dropdown-item {
+            display: inline-flex;
+            align-items: center;
+    
+            &:focus, &:active {
+                outline: none;
+                border: none;
+                background-color: transparent;
+            }
+
+            ion-icon {
+                margin-right: 10px;
+            }
+    
+            .tf-bg-icon {
+                ion-icon {
+                    font-size: 18px;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

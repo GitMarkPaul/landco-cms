@@ -1,0 +1,128 @@
+.tf-app {
+    .tf-btn {
+        font-family: $tf-default-font;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 4px 24px 4px 24px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        letter-spacing: .6px;
+        outline: none;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    // Button Sizes
+    .tf-btn-lg {
+        padding: 12px 40px 12px 40px;
+    }
+    
+    // Buttons Color
+    .tf-btn-primary {
+        background-color: $tf-color-primary;
+        color: $tf-color-white;
+    
+        &:hover {
+            background-color: $tf-color-primary-darker;
+        }
+    
+        ion-icon {
+            font-size: 24px;
+            color: $tf-color-white;
+            margin-right: 6px;
+        }
+    }
+    
+    .tf-btn-warning {
+        background-color: $tf-color-warning;
+    }
+    
+    .tf-btn-info {
+        background-color: $tf-color-info;
+    }
+    
+    .tf-btn-danger {
+        background-color: $tf-color-danger;
+        color: $tf-color-white;
+
+        ion-icon {
+            font-size: 16px;
+            color: $tf-color-white;
+            margin-right: 6px;
+        }
+    }
+    
+    .tf-btn-success {
+        background-color: $tf-color-success;
+        color: $tf-color-white;
+
+        ion-icon {
+            font-size: 16px;
+            color: $tf-color-white;
+            margin-right: 6px;
+        }
+    }
+    
+    .tf-btn-secondary {
+        background-color: $tf-color-secondary;
+    }
+    
+    .tf-btn-white {
+        background-color: $tf-color-white;
+    
+        ion-icon {
+            font-size: 24px;
+            color: $tf-color-black;
+            margin-right: 6px;
+        }
+    }
+    
+    .tf-btn-link {
+        background-color: transparent;
+        color: $tf-color-primary;
+    
+        &:hover {
+            background-color: $tf-color-primary-contrast;
+        }
+    
+        ion-icon {
+            color: $tf-color-primary;
+            margin-right: 6px;
+        }
+    }
+    
+    .tf-btn-outline-primary {
+        background-color: transparent;
+        border: 1px solid $tf-color-primary;
+        color: $tf-color-primary;
+    
+        &:hover {
+            background-color: $tf-color-primary-contrast;
+        }
+    
+        ion-icon {
+            font-size: 24px;
+            color: $tf-color-primary;
+            margin-right: 6px;
+        }
+    }
+    
+    .tf-btn-outline-white {
+        background-color: transparent;
+        border: 1px solid $tf-color-white;
+        color: $tf-color-white;
+        
+        ion-icon {
+            font-size: 24px;
+            margin-right: 6px;
+        }
+    
+        &:hover {
+            background-color: $tf-color-white;
+            color: $tf-color-primary;
+        }
+    }
+}
