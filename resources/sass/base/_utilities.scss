@@ -469,3 +469,13 @@
         object-fit: cover;
     }
 }
+
+// White Spaces
+.w-space-normal {
+    white-space: normal;
+}
+
+// Position
+.fixed-bottom {
+    z-index: 1030 !important;
+}

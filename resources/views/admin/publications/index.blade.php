@@ -5,10 +5,10 @@
     <div class="container-fluid">
         <!-- Start: Breadcrumb -->
         <nav class="breadcrumb-nav" aria-label="breadcrumb">
-            <h4 class="breadcrumb-heading">Blogs</h4>
+            <h4 class="breadcrumb-heading">Manage Blogs</h4>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admin.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Accounts</li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Posts</li>
             </ol>
         </nav>
         <!-- End: Breadcrumb -->
@@ -29,45 +29,50 @@
                 </div>
             </div>
             <div class="col">
-                <div class="tf-card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead class="bg-light">
-                                    <tr>
-                                        <th class="text-center">No.</th>
-                                        <th>Title</th>
-                                        <th>Author</th>
-                                        <th>Date Published</th>
-                                        <th>Status</th>
-                                        <th class="text-center">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($publications as $key => $value)
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td>{{ $value->title }}</td>
-                                            <td>{{ $value->author }}</td>
-                                            <td>{{ $value->created_at }}</td>
-                                            <td>{{ $value->status }}</td>
-                                            <td>
-                                                <div class="dropdown d-flex justify-content-center dropend">
-                                                    <button class="tf-btn tf-btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Settings
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                        <li><a class="dropdown-item" href="{{ route('pub_edit', $value->slug_url) }}"><ion-icon name="create"></ion-icon> Edit Blog</a></li>
-                                                        <li><a class="dropdown-item delete" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}"><ion-icon name="trash"></ion-icon>Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th class="text-center">No.</th>
+                                <th width="35%">Title</th>
+                                <th>Category</th>
+                                <th>Author</th>
+                                <th>Date Published</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($publications as $key => $value)
+                                <tr>
+                                    <td class="text-center">{{ ++$key }}</td>
+                                    <td class="w-space-normal">{{ $value->title }}</td>
+                                    <td>{{ $value->category->category_name }}</td>
+                                    <td>{{ $value->author }}</td>
+                                    <td>{{ $value->created_at->format('M d, Y') }}</td>
+                                    <td class="text-center">
+                                        @if ($value->status === 'Active')
+                                            <span class="badge rounded-pill bg-success">{{ $value->status }}</span>
+                                        @else
+                                            <span class="badge rounded-pill bg-secondary">{{ $value->status }}</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <div class="dropdown d-flex justify-content-center dropend">
+                                            <button class="tf-btn tf-btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Settings
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item" href="{{ $value->meta_link }}" target="_blank" rel="noopener noreferrer"><ion-icon name="open"></ion-icon> View Article</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('pub_edit', $value->slug_url) }}"><ion-icon name="pencil"></ion-icon> Edit Blog</a></li>
+                                                <li><a class="dropdown-item delete" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}"><ion-icon name="trash"></ion-icon>Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

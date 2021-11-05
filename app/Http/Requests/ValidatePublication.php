@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddPublication extends FormRequest
+class ValidatePublication extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,9 @@ class AddPublication extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:publications,title',
-            'excerpt' => 'required',
-            'content' => 'required',
-            'author' => 'required',
+            'title' => 'required',
             'category_id' => 'required',
-            'file' => 'required',
+            'file' => 'required|image|mimes:jpeg,png,jpg,webp|max:1000',
             'status' => 'required',
         ];
     }

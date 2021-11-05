@@ -36,7 +36,7 @@ class PublicationCategories extends Model
 
     public function get_pub_cat_data()
     {
-        return $this->where('status', '=', 'Active')->get(['category_name', 'status', 'id']);
+        return $this->orderBy('updated_at', 'DESC')->get(['category_name', 'status', 'id']);
     }
 
     public function store_pub_category_data($request, $user_id, $role_id)
@@ -47,6 +47,31 @@ class PublicationCategories extends Model
             'category_name' => $request->category_name,
             'slug_url' => Str::slug($request->category_name),
             'status' => $request->status
+        ]);
+    }
+
+    public function update_pub_category_data($request, $user_id, $role_id)
+    {
+        return $this->find(decrypt($request->id))->update([
+            'user_id' => $user_id,
+            'role_id' => $role_id,
+            'category_name' => $request->category_name,
+            'slug_url' => Str::slug($request->category_name),
+            'status' => $request->status
+        ]);
+    }
+    
+    public function delete_pub_category_data($request)
+    {
+        return $this->find(decrypt($request->id))->delete();
+    }
+
+    public function get_pub_cat_archive_data()
+    {
+        return $this->onlyTrashed()->get([
+            'id',
+            'category_name',
+            'deleted_at'
         ]);
     }
 }

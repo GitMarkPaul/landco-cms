@@ -13,7 +13,7 @@ html {
   box-sizing: border-box;
 }
 
-html, body {
+body {
   font-family: "Poppins", sans-serif !important;
   font-size: 13px !important;
   line-height: 1.75 !important;
@@ -474,6 +474,14 @@ html, body {
      object-fit: cover;
 }
 
+.w-space-normal {
+  white-space: normal;
+}
+
+.fixed-bottom {
+  z-index: 1030 !important;
+}
+
 .tf-app .tf-btn {
   font-family: "Poppins", sans-serif;
   font-size: 13px;
@@ -606,6 +614,10 @@ html, body {
 .tf-card .card-img-overlay .card-title {
   font-size: 1.275rem;
 }
+.tf-card .card-body .card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
 .tf-card .card-body .tf-card-title {
   font-size: 18px;
   margin-bottom: 20px;
@@ -721,6 +733,7 @@ html, body {
 .tf-app .dropdown-menu {
   border: none;
   box-shadow: 0 0 2px 0 rgba(76, 87, 125, 0.2);
+  transform: translate(70px -37px) !important;
 }
 .tf-app .dropdown-menu .dropdown-item {
   display: inline-flex;
@@ -756,8 +769,10 @@ html, body {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .tf-form-control:focus {
-  outline: none !important;
-  box-shadow: none !important;
+  color: #1e2022;
+  background-color: #fff !important;
+  outline: none;
+  box-shadow: 0 0 1rem 0 rgba(140, 152, 164, 0.25);
 }
 
 .tf-app .input-group .input-group-text {
@@ -767,14 +782,14 @@ html, body {
   font-size: 13px;
   font-weight: 500;
   background-color: #f5f5f5;
-  border: none;
+  border: 0.0625rem solid rgba(33, 50, 91, 0.1) !important;
   padding: 12px;
 }
 .tf-app .form-control:focus, .tf-app .select2:focus {
-  position: relative;
+  color: #1e2022;
+  background-color: #fff !important;
   outline: none;
-  box-shadow: none;
-  background-color: #f5f5f5;
+  box-shadow: 0 0 1rem 0 rgba(140, 152, 164, 0.25);
 }
 .tf-app .form-label {
   font-size: 13px;
@@ -802,22 +817,20 @@ html, body {
   font-weight: 500;
 }
 
-.tf-img-filtered {
-  filter: grayscale(100%);
-}
-
-.tf-barcode-img {
-  width: 100%;
-  height: 100px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.tf-qrcode-img {
+.thumbnail-md {
   width: 100%;
   height: 200px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
+}
+
+.thumbnail-sm {
+  width: 100%;
+  height: 45px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
 }
 
 .modal .modal-dialog {
@@ -855,10 +868,12 @@ html, body {
 
 .table {
   border: 1px solid #eee !important;
+  background-color: #ffffff;
+  box-shadow: 0 0 2px 0 rgba(76, 87, 125, 0.2);
 }
 
 tbody, td, tfoot, th, thead, tr {
-  font-size: 12px;
+  font-size: 13px;
   white-space: nowrap;
   vertical-align: middle;
 }

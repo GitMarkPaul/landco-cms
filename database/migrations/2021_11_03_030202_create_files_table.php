@@ -17,8 +17,11 @@ class CreateFilesTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('role_id');
-            $table->string('original_file_name');
-            $table->string('file_name');
+            $table->string('original_file_name')->nullable();
+            $table->string('file_name')->nullable();
+            $table->string('size')->nullable();
+            $table->string('type')->nullable();
+            $table->string('dimension')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

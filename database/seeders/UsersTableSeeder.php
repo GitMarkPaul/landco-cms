@@ -18,13 +18,23 @@ class UsersTableSeeder extends Seeder
         // Generate pre-defined admin users
 
         User::create([
+            'username' => 'Creator',
+            'name' => 'Super Administrator',
+            'email'	=> 'creator@gmail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('creator@web2021'),
+            'remember_token' => Str::random(10),
+            'role_id' => 1
+        ]);
+
+        User::create([
             'username' => 'Admin',
             'name' => 'Administrator',
             'email'	=> 'admin@gmail.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('admin@web2021'),
+            'password' => bcrypt('password'),
             'remember_token' => Str::random(10),
-            'role_id' => 1
+            'role_id' => 2
         ]);
     }
 }

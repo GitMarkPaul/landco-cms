@@ -2,6 +2,7 @@
     .dropdown-menu {
         border: none;
         box-shadow: $tf-card-box-shadow;
+        transform: translate(70px -37px) !important;
     
         .dropdown-item {
             display: inline-flex;

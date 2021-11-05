@@ -17,6 +17,11 @@ class RolesTableSeeder extends Seeder
         // Generate pre-defined admin roles
 
         Role::create([
+            'role' => 'Creator',
+            'excerpt' => 'User that has access to all the system settings codes'
+        ]);
+
+        Role::create([
             'role' => 'Administrator',
             'excerpt' => 'User that has access to system settings'
         ]);

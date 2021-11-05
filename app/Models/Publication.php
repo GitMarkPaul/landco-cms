@@ -60,7 +60,9 @@ class Publication extends Model
             'user_id' => $user_id,
             'role_id' => $role_id,
             'file_id' => $file_id,
+            'file_link' => $request->file_link,
             'title' => $request->title,
+            'meta_link' => $request->meta_link,
             'slug_url' => Str::slug($request->title),
             'excerpt' => $request->excerpt,
             'content' => $request->content,
@@ -73,13 +75,15 @@ class Publication extends Model
         ]);
     }
 
-    public function update_pub_data($request, $user_id, $role_id, $category_id, $file_id, $id)
+    public function update_pub_data($request, $user_id, $role_id, $file_id, $category_id, $id)
     {
         return $this->find($id)->update([
             'user_id' => $user_id,
             'role_id' => $role_id,
             'file_id' => $file_id,
+            'file_link' => $request->file_link,
             'title' => $request->title,
+            'meta_link' => $request->meta_link,
             'slug_url' => Str::slug($request->title),
             'excerpt' => $request->excerpt,
             'content' => $request->content,
@@ -97,7 +101,9 @@ class Publication extends Model
         return $this->find($id)->update([
             'user_id' => $user_id,
             'role_id' => $role_id,
+            'file_link' => $request->file_link,
             'title' => $request->title,
+            'meta_link' => $request->meta_link,
             'slug_url' => Str::slug($request->title),
             'excerpt' => $request->excerpt,
             'content' => $request->content,
@@ -117,11 +123,41 @@ class Publication extends Model
 
     public function get_pub_data($role_id)
     {
-        return $this->where('role_id',  $role_id)->get();
+        return $this->where('role_id',  $role_id)->orderBy('updated_at', 'DESC')->get([
+            'id',
+            'slug_url',
+            'title',
+            'category_id',
+            'meta_link',
+            'author',
+            'published_on',
+            'status',
+            'created_at'
+        ]);
     }
 
     public function delete_data($request)
     {
         return $this->findOrFail(decrypt($request->id))->delete();
+    }
+
+    public function get_pub_archives_data()
+    {
+        return $this->onlyTrashed()->get([
+            'id',
+            'file_id',
+            'title',
+            'deleted_at'
+        ]);
+    }
+
+    public function restore_pub_data($request)
+    {
+        return $this->where('id', decrypt($request->id))->withTrashed()->restore();
+    }
+
+    public function destroy_pub_data($request)
+    {
+        return $this->where('id', decrypt($request->id))->onlyTrashed()->forceDelete();
     }
 }

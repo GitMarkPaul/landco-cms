@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\PublicationCategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,19 +25,42 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-// Publications
+Route::group(['prefix' => 'admin/', 'middleware' => 'auth'], function() {
+    // Manage Account
+    Route::group(['prefix' => 'settings/'], function() {
+        Route::get('index', [SettingsController::class, 'index'])->name('settings');
 
-Route::group(['prefix' => 'admin/publications/'], function() {
-    Route::get('listing', [PublicationController::class, 'index'])->name('pub_index');
-    Route::get('create', [PublicationController::class, 'create'])->name('pub_create');
-    Route::post('store', [PublicationController::class, 'store'])->name('pub_store');
-    Route::get('edit/{slug_url}', [PublicationController::class, 'edit'])->name('pub_edit');
-    Route::put('update/{id}', [PublicationController::class, 'update'])->name('pub_update');
-    Route::delete('delete', [PublicationController::class, 'delete'])->name('pub_delete');
+        // File Manager
+        Route::get('file-manager', [SettingsController::class, 'files'])->name('files');
+        Route::put('rename', [SettingsController::class, 'rename'])->name('file_rename');
+        Route::delete('delete', [SettingsController::class, 'delete_file'])->name('file_delete');
 
-    // Category
-    Route::group(['prefix' => 'category/'], function() {
-        Route::get('index', [PublicationCategoryController::class, 'index'])->name('pub_cat_index');
-        Route::post('store', [PublicationCategoryController::class, 'store'])->name('pub_cat_store');
+        // Password
+        Route::get('password', [SettingsController::class, 'password'])->name('password');
+        Route::post('update-password', [SettingsController::class, 'update_password'])->name('update_password');
+    });
+
+    // Publications
+    Route::group(['prefix' => 'publications/'], function() {
+        Route::get('listing', [PublicationController::class, 'index'])->name('pub_index');
+        Route::get('create', [PublicationController::class, 'create'])->name('pub_create');
+        Route::post('store', [PublicationController::class, 'store'])->name('pub_store');
+        Route::get('edit/{slug_url}', [PublicationController::class, 'edit'])->name('pub_edit');
+        Route::put('update/{id}', [PublicationController::class, 'update'])->name('pub_update');
+        Route::delete('delete', [PublicationController::class, 'delete'])->name('pub_delete');
+        Route::post('restore', [PublicationController::class, 'restore'])->name('pub_restore');
+        Route::delete('destroy', [PublicationController::class, 'destroy'])->name('pub_destroy');
+    
+        // Category
+        Route::group(['prefix' => 'category/'], function() {
+            Route::get('', [PublicationCategoryController::class, 'index'])->name('pub_cat_index');
+            Route::post('store', [PublicationCategoryController::class, 'store'])->name('pub_cat_store');
+            Route::put('update', [PublicationCategoryController::class, 'update'])->name('pub_cat_update');
+            Route::delete('delete', [PublicationCategoryController::class, 'delete'])->name('pub_cat_delete');
+        });
+
+        // Archives
+        Route::get('archives', [PublicationController::class, 'archive'])->name('pub_archive');
     });
 });
+
