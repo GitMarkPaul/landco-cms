@@ -1,8 +1,8 @@
 .tf-app {
-    .tf-btn {
+    .tf-btn, .btn {
         font-family: $tf-default-font;
         font-size: 13px;
-        font-weight: 600;
+        font-weight: 500;
         padding: 4px 24px 4px 24px;
         border: none;
         border-radius: 6px;
@@ -34,6 +34,10 @@
             color: $tf-color-white;
             margin-right: 6px;
         }
+    }
+
+    .btn-dark {
+        background-color: $tf-color-black;
     }
     
     .tf-btn-warning {

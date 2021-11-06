@@ -27,53 +27,61 @@
                 </div>
                 @endif
                 <div class="col-xl-9">
-                    <div class="tf-card">
-                        <div class="card-body">
-                            <div class="row row-cols-1 g-4">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="title" class="form-label">Blog Title *</label>
-                                        <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Write some title here..." value="{{ old('title') }}" required>
-
-                                        @error('title')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-
+                    <div class="row row-cols-1 g-4">
+                        <div class="col">
+                            <div class="tf-card">
+                                <div class="card-body">
+                                    <div class="row row-cols-1 g-4">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="title" class="form-label">Blog Title *</label>
+                                                <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Write some title here..." value="{{ old('title') }}" required>
+        
+                                                @error('title')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+        
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="title" class="form-label">Excerpt</label>
+                                                <textarea name="excerpt" class="form-control @error('excerpt') is-invalid @enderror" rows="3" placeholder="The summary of the blog (optional)">{{ old('excerpt') }}</textarea>
+        
+                                                @error('excerpt')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <label for="title" class="form-label">Redirection Link Only</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="vanity_link"><ion-icon name="link-outline"></ion-icon></span>
+                                                <input type="text" name="meta_link" class="form-control @error('meta_link') is-invalid @enderror" placeholder="Paste the link here..." value="{{ old('meta_link') }}" aria-label="Vanity" aria-describedby="vanity_link">
+                                            </div>
+        
+                                            <div class="form-text">Note: This link serves as the redirection to the article that is already published</div>
+                                            @error('meta_link')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="title" class="form-label">Excerpt</label>
-                                        <textarea name="excerpt" class="form-control @error('excerpt') is-invalid @enderror" rows="3" placeholder="The summary of the blog (optional)">{{ old('excerpt') }}</textarea>
-
-                                        @error('excerpt')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <label for="title" class="form-label">Redirection Link Only</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="vanity_link"><ion-icon name="link-outline"></ion-icon></span>
-                                        <input type="text" name="meta_link" class="form-control @error('meta_link') is-invalid @enderror" placeholder="Paste the link here..." value="{{ old('meta_link') }}" aria-label="Vanity" aria-describedby="vanity_link">
-                                    </div>
-
-                                    <div class="form-text">Note: This link serves as the redirection to the article that is already published</div>
-                                    @error('meta_link')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="col">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="tf-card">
+                                <div class="card-body">
                                     <div class="form-group">
                                         <label for="title" class="form-label">Content</label>
                                         <textarea name="content" class="form-control content-editor" placeholder="Write some content here..">{{ old('content') }}</textarea>
-
+        
                                         @error('content')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

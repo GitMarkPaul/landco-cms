@@ -29,9 +29,14 @@ body {
         color: $tf-color-black;
     }
 
-    span, p, small {
+    h1, h2, h3, h4, h5, h6 {
+        color: $tf-color-black;
+    }
+
+    span, p, small, label, div {
         font-weight: 400;
         line-height: 1.6;
+        color: $tf-color-gray;
     }
 
     ul {

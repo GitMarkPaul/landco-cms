@@ -12,7 +12,8 @@ use Auth;
 
 // Requests
 
-use App\Http\Requests\ValidatePublication;
+use App\Http\Requests\AddPublication;
+use App\Http\Requests\UpdatePublication;
 
 class PublicationController extends Controller
 {
@@ -37,9 +38,7 @@ class PublicationController extends Controller
 
     public function index()
     {
-        $role_id = Auth::user()->role_id;
-
-        $publications = $this->publication->get_pub_data($role_id);
+        $publications = $this->publication->get_pub_data();
 
         return view('admin.publications.index', compact('publications'));
     }
@@ -63,7 +62,7 @@ class PublicationController extends Controller
      * @return void
      */
 
-    public function store(ValidatePublication $request)
+    public function store(AddPublication $request)
     {
         $user_id = Auth::user()->id;
         $role_id = Auth::user()->role_id;
@@ -107,7 +106,7 @@ class PublicationController extends Controller
      *
      * @return void
      */
-    public function update(ValidatePublication $request, $id)
+    public function update(UpdatePublication $request, $id)
     {
         $id = decrypt($id);
         $user_id = Auth::user()->id;

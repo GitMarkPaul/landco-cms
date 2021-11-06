@@ -17,7 +17,7 @@ body {
   font-family: "Poppins", sans-serif !important;
   font-size: 13px !important;
   line-height: 1.75 !important;
-  background: #f3f6f8 !important;
+  background: #edf2f7 !important;
   height: 100vh;
   overflow-x: hidden;
   margin: 0;
@@ -25,11 +25,15 @@ body {
 
 .tf-app a {
   text-decoration: none;
-  color: #181c32;
+  color: #2d3748;
 }
-.tf-app span, .tf-app p, .tf-app small {
+.tf-app h1, .tf-app h2, .tf-app h3, .tf-app h4, .tf-app h5, .tf-app h6 {
+  color: #2d3748;
+}
+.tf-app span, .tf-app p, .tf-app small, .tf-app label, .tf-app div {
   font-weight: 400;
   line-height: 1.6;
+  color: #718096;
 }
 .tf-app ul {
   list-style: none;
@@ -37,7 +41,7 @@ body {
 }
 .tf-app ion-icon {
   font-size: 18px;
-  color: #5c5f62;
+  color: #718096;
 }
 
 .tf-text-primary {
@@ -251,7 +255,7 @@ body {
   font-size: 16px;
   padding-top: 24px;
   padding-bottom: 24px;
-  color: #5c5f62;
+  color: #718096;
 }
 
 .tf-merchant-off-menu {
@@ -277,7 +281,7 @@ body {
   opacity: 0.6;
   display: none;
   z-index: 9;
-  background-color: #181c32;
+  background-color: #2d3748;
 }
 
 .tf-svg-wrapper {
@@ -382,7 +386,7 @@ body {
   width: 80%;
   margin-top: 16px;
   margin-bottom: 24px;
-  color: #5c5f62;
+  color: #718096;
 }
 
 .tf-notif-wrapper {
@@ -401,7 +405,7 @@ body {
   -webkit-box-orient: vertical;
 }
 .tf-notif-wrapper li .tf-notif-date {
-  color: #5c5f62;
+  color: #718096;
 }
 
 .tf-border-dashed-primary {
@@ -482,10 +486,10 @@ body {
   z-index: 1030 !important;
 }
 
-.tf-app .tf-btn {
+.tf-app .tf-btn, .tf-app .btn {
   font-family: "Poppins", sans-serif;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 4px 24px 4px 24px;
   border: none;
   border-radius: 6px;
@@ -511,6 +515,9 @@ body {
   font-size: 24px;
   color: #ffffff;
   margin-right: 6px;
+}
+.tf-app .btn-dark {
+  background-color: #2d3748;
 }
 .tf-app .tf-btn-warning {
   background-color: #facf5a;
@@ -544,7 +551,7 @@ body {
 }
 .tf-app .tf-btn-white ion-icon {
   font-size: 24px;
-  color: #181c32;
+  color: #2d3748;
   margin-right: 6px;
 }
 .tf-app .tf-btn-link {
@@ -736,6 +743,7 @@ body {
   transform: translate(70px -37px) !important;
 }
 .tf-app .dropdown-menu .dropdown-item {
+  font-size: 14px;
   display: inline-flex;
   align-items: center;
 }
@@ -939,7 +947,7 @@ tbody, td, tfoot, th, thead, tr {
 }
 .tf-header .tf-navbar .tf-navbar-menu .tf-navbar-items .tf-nav-user .tf-nav-user-wrapper .tf-navbar-email {
   font-size: 10px;
-  color: #5c5f62;
+  color: #718096;
 }
 .tf-header .tf-navbar .tf-navbar-menu .tf-navbar-items .btn-group .dropdown-menu {
   width: 300px;
@@ -981,13 +989,13 @@ tbody, td, tfoot, th, thead, tr {
 }
 .tf-app .tf-aside .tf-aside-menu .tf-aside-items .tf-aside-collapse li span {
   font-weight: 400;
-  color: #181c32;
+  color: #2d3748;
 }
 .tf-app .tf-aside .tf-aside-menu .tf-aside-heading {
   font-size: 13px;
   font-weight: 600;
   padding-bottom: 24px;
-  color: #5c5f62;
+  color: #718096;
 }
 .tf-app .tf-aside .tf-aside-menu .tf-mobile-logout {
   position: absolute;
@@ -1018,7 +1026,15 @@ section .tf-section-heading {
 }
 section .tf-section-heading .tf-section-title {
   font-size: 18px;
-  color: #181c32;
+  color: #2d3748;
+}
+
+.container-center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: -50%;
+  transform: translateY(-50%);
 }
 
 @media only screen and (max-width: 1200px) {

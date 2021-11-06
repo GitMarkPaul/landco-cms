@@ -121,9 +121,9 @@ class Publication extends Model
         return $this->where('slug_url', $slug_url)->first();
     }
 
-    public function get_pub_data($role_id)
+    public function get_pub_data()
     {
-        return $this->where('role_id',  $role_id)->orderBy('updated_at', 'DESC')->get([
+        return $this->orderBy('updated_at', 'DESC')->get([
             'id',
             'slug_url',
             'title',
