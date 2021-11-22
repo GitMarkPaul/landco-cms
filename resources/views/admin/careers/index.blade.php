@@ -5,10 +5,10 @@
     <div class="container-fluid">
         <!-- Start: Breadcrumb -->
         <nav class="breadcrumb-nav" aria-label="breadcrumb">
-            <h4 class="breadcrumb-heading">Manage Blogs</h4>
+            <h4 class="breadcrumb-heading">Manage Careers</h4>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Posts</li>
+                <li class="breadcrumb-item active" aria-current="page">Job Postings</li>
             </ol>
         </nav>
         <!-- End: Breadcrumb -->
@@ -25,7 +25,7 @@
             @endif
             <div class="col">
                 <div class="d-flex justify-content-end">
-                    <a href="{{ route('pub_create') }}" class="tf-btn btn-primary"><i class="bi bi-plus-square"></i> Add New Article</a>
+                    <a href="{{ route('careers.create') }}" class="tf-btn btn-primary"><i class="bi bi-plus-square"></i> Add New Job Posting</a>
                 </div>
             </div>
             <div class="col">
@@ -35,21 +35,17 @@
                             <tr>
                                 <th class="text-center">No.</th>
                                 <th width="35%">Title</th>
-                                <th>Category</th>
-                                <th>Author</th>
-                                <th>Date Published</th>
+                                <th>Date Posted</th>
                                 <th class="text-center">Status</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($publications as $key => $value)
+                            @foreach ($careers as $key => $value)
                                 <tr>
                                     <td class="text-center">{{ ++$key }}</td>
                                     <td class="w-space-normal">{{ $value->title }}</td>
-                                    <td>{{ $value->category->category_name }}</td>
-                                    <td>{{ $value->author }}</td>
-                                    <td>{{ $value->created_at->format('M d, Y') }}</td>
+                                    <td>{{ Carbon\Carbon::parse($value->created_at)->format('MM d, Y') }}</td>
                                     <td class="text-center">
                                         {{ $value->status }}
                                     </td>
@@ -59,9 +55,8 @@
                                                 Settings
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li><a class="dropdown-item" href="{{ $value->meta_link }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Article</a></li>
-                                                <li><a class="dropdown-item" href="{{ route('pub_edit', [Str::of($value->created_at->format('Y d m s'))->studly(), $value->slug_url]) }}"><i class="bi bi-pencil"></i> Edit Blog</a></li>
-                                                <li><a class="dropdown-item delete" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}"><i class="bi bi-trash"></i> Delete</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('careers.edit', $value->slug) }}"><i class="bi bi-pencil"></i> Edit Job Posting</a></li>
+                                                <li><a class="dropdown-item delete" href="javascript:void(0);" data-url="{{ route('careers.destroy', encrypt($value->id)) }}" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="bi bi-trash"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -83,10 +78,10 @@
                 <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="POST" action="{{ route('pub_delete') }}">
+            <form action="" method="POST" id="delete_form">
                 @method('DELETE')
                 @csrf
-                <input type="hidden" class="form-control" name="id" id="pub_id">
+
                 <div class="modal-body">
                     <p>This will remove this post from your blog. You will no longer be able to view or edit it once deleted.</p>
                 </div>
@@ -100,11 +95,11 @@
 </div>
 @endsection
 
-@section('scripts')
-    <script type="text/javascript">
-        $(document).on('click', '.delete', function() {
-            $('#pub_id').val($(this).data('id'));
-            $('#deleteModal').modal('show');
-		});
-    </script>
-@endsection
+@push('scripts')
+<script type="text/javascript">
+    $(document).on('click', '.delete', function() {
+        let url = $(this).data('url');
+        $('#delete_form').attr('action', url);
+    });
+</script>
+@endpush

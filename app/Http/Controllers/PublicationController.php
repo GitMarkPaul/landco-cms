@@ -93,7 +93,7 @@ class PublicationController extends Controller
      * @return void
      */
 
-    public function edit($slug_url)
+    public function edit($created_at, $slug_url)
     {
         $pub_details = $this->publication->get_details($slug_url);
         $pub_cats = $this->publication_category->get_pub_cat_data();

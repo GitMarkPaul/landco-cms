@@ -42,133 +42,30 @@
 <!-- /.text-block -->
 
 <!-- .text-block -->
+@if(count($careers) > 0)
 <section class="text-block with-bg pt-115 pb-115" style="background-image: url('{{ asset("assets/img/backgrounds/2.jpg") }}');">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 wow fadeInUp">
                 <h3 class="mb-5 text-center">Careers and Opportunities in Landco</h3>
-                
-                <div class="card card-career">                         
-                    <div class="card-body">
-                        <div class="card-title justify-content-between">
-                            <h4 class="mb-2"><a href="title-transfer-specialist.html">Title Transfer Specialist</a></h4>
-                            <p class="mt-1"><i class="fal fa-calendar-alt mr-2"></i>Apr 27, 2021</p>
+            </div>
+            @foreach ($careers as $key => $value)
+                <div class="col-md-10 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="card card-career">                         
+                        <div class="card-body">
+                            <div class="card-title justify-content-between">
+                                <h4 class="mb-2"><a href="{{ route('career_details', [Str::of($value->created_at->format('Y d m s'))->studly(), $value->slug]) }}">{{ $value->title }}</a></h4>
+                                <p class="mt-1"><i class="fal fa-calendar-alt mr-2"></i>{{ $value->created_at->format('M d, Y') }}</p>
+                            </div>
+                            <p><strong>Job Qualifications:</strong> {{ $value->excerpt }}</p>
+                            <a href="{{ route('career_details', [Str::of($value->created_at->format('Y d m s'))->studly(), $value->slug]) }}" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
                         </div>
-                        <p><strong>Job Qualifications:</strong> Responsible in all aspects of Title Transfer Documentation and updating the status of accounts in the monitoring and submission of daily report updates to keep the Team Leader on track of the work being assigned.</p>
-                        <a href="title-transfer-specialist.html" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-10 wow fadeInUp" data-wow-delay=".2s">
-                <div class="card card-career">                         
-                    <div class="card-body">
-                        <div class="card-title justify-content-between">
-                            <h4 class="mb-2"><a href="title-transfer-liaison.html">Title Transfer Liaison</a></h4>
-                            <p class="mt-1"><i class="fal fa-calendar-alt mr-2"></i>Apr 27, 2021</p>
-                        </div>
-                        <p><strong>Job Qualifications:</strong> Performs liaison / fieldwork related to processing of documents in real estate such as title transfer, registration, realty tax, BIR, registry of deeds and assessor's office.</p>
-                        <a href="title-transfer-liaison.html" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10 wow fadeInUp">
-                <div class="card card-career">                         
-                    <div class="card-body">
-                        <div class="card-title justify-content-between">
-                            <h4 class="mb-2"><a href="filing-specialist.html">Filing Specialist</a></h4>
-                            <p class="mt-1"><i class="fal fa-calendar-alt mr-2"></i>Apr 27, 2021</p>
-                        </div>
-                        <p><strong>Job Qualifications:</strong> To act as liaison and process requirements, transmit documents and payments such as but not limited to tax returns and business permits, to government agencies and other offices.</p>
-                        <a href="filing-specialist.html" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10 wow fadeInUp" data-wow-delay=".2s">
-                <div class="card card-career">                         
-                    <div class="card-body">
-                        <div class="card-title justify-content-between">
-                            <h4 class="mb-2"><a href="rpt-management-specialist.html">RPT Management Specialist</a></h4>
-                            <p class="mt-1"><i class="fal fa-calendar-alt mr-2"></i>Apr 27, 2021</p>
-                        </div>
-                        <p><strong>Job Qualifications:</strong> Coordinates with TTG / Community Development for request of assessment, tax dec or tax clearance.</p>
-                        <a href="rpt-management-specialist.html" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10 wow fadeInUp">
-                <div class="card card-career">                         
-                    <div class="card-body">
-                        <div class="card-title justify-content-between">
-                            <h4 class="mb-2"><a href="treasury-specialist-project.html">Treasury Specialist (Project)</a></h4>
-                            <p class="mt-1"><i class="fal fa-calendar-alt mr-2"></i>Sep 17, 2019</p>
-                        </div>
-                        <p><strong>Job Qualifications:</strong> Distribution of collections per project based on JV Agreement. Monitoring of collections for Projects owned solely by Landco.</p>
-                        <a href="treasury-specialist-project.html" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10 wow fadeInUp" data-wow-delay=".2s">
-                <div class="card card-career">                         
-                    <div class="card-body">
-                        <div class="card-title justify-content-between">
-                            <h4 class="mb-2"><a href="customer-service-specialist.html">Customer Service Specialist</a></h4>
-                            <p class="mt-1"><i class="fal fa-calendar-alt mr-2"></i>Sep 17, 2019</p>
-                        </div>
-                        <p><strong>Job Qualifications:</strong> Assists internal and external clients regarding inquiries, requests and complaints raised across all channels (hotline, e-mail, chat, walk-in, website, social media).</p>
-                        <a href="customer-service-specialist.html" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10 wow fadeInUp">
-                <div class="card card-career">                         
-                    <div class="card-body">
-                        <div class="card-title justify-content-between">
-                            <h4 class="mb-2"><a href="sales-assistant.html">Sales Assistant</a></h4>
-                            <p class="mt-1"><i class="fal fa-calendar-alt mr-2"></i>Sep 17, 2019</p>
-                        </div>
-                        <p><strong>Job Qualifications:</strong> College Graduate Preferably with related work experience Computer literate, Patient &amp; with happiness disposition, Good communication skills.</p>
-                        <a href="sales-assistant.html" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10 wow fadeInUp" data-wow-delay=".2s">
-                <div class="card card-career">                         
-                    <div class="card-body">
-                        <div class="card-title justify-content-between">
-                            <h4 class="mb-2"><a href="title-transfer-supervisor.html">Title Transfer Supervisor</a></h4>
-                            <p class="mt-1"><i class="fal fa-calendar-alt mr-2"></i>Sep 17, 2019</p>
-                        </div>
-                        <p><strong>Job Qualifications:</strong> General knowledge of standard office methods and procedures, business English, spelling and arithmetic. Ability to make decisions relating to assigned operations in conformance with applicable laws and policies.</p>
-                        <a href="title-transfer-supervisor.html" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10 wow fadeInUp">
-                <div class="card card-career">                         
-                    <div class="card-body">
-                        <div class="card-title justify-content-between">
-                            <h4 class="mb-2"><a href="account-management-specialists.html">Account Management Specialists</a></h4>
-                            <p class="mt-1"><i class="fal fa-calendar-alt mr-2"></i>Sep 17, 2019</p>
-                        </div>
-                        <p><strong>Job Qualifications:</strong> Processing of client’s request, research and verify accounts needed. College Graduate Good Communication Skills Fast Learner Flexible Analytic and...</p>
-                        <a href="account-management-specialists.html" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10 wow fadeInUp" data-wow-delay=".2s">
-                <div class="card card-career">                         
-                    <div class="card-body">
-                        <div class="card-title justify-content-between">
-                            <h4 class="mb-2"><a href="project-engineer.html">Project Engineer</a></h4>
-                            <p class="mt-1"><i class="fal fa-calendar-alt mr-2"></i>Jul 17, 2019</p>
-                        </div>
-                        <p><strong>Job Qualifications:</strong> Conducts liaison, coordination or consultation with statutory authorities for the appropriate permit and licenses required to implement the construction of the projects.</p>
-                        <a href="project-engineer.html" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
+@endif
 <!-- /.text-block -->
 @endsection

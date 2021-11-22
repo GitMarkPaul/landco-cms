@@ -6,6 +6,7 @@ use App\Http\Controllers\PublicationCategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\CareerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +55,7 @@ Route::get('privilege-club', [GuestController::class, 'privilege_club'])->name('
 Route::get('publications', [GuestController::class, 'publications'])->name('publications');
 Route::get('publications/details/{slug_url}', [GuestController::class, 'details'])->name('details');
 Route::get('careers', [GuestController::class, 'careers'])->name('careers');
+Route::get('careers/{created_at}/{slug}', [GuestController::class, 'career_details'])->name('career_details');
 Route::get('contact-us', [GuestController::class, 'contact_us'])->name('contact_us');
 
 # Password Reset
@@ -89,7 +91,7 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'auth'], function() {
         Route::get('listing', [PublicationController::class, 'index'])->name('pub_index');
         Route::get('create', [PublicationController::class, 'create'])->name('pub_create');
         Route::post('store', [PublicationController::class, 'store'])->name('pub_store');
-        Route::get('edit/{slug_url}', [PublicationController::class, 'edit'])->name('pub_edit');
+        Route::get('edit/{created_at}/{slug_url}', [PublicationController::class, 'edit'])->name('pub_edit');
         Route::put('update/{id}', [PublicationController::class, 'update'])->name('pub_update');
         Route::delete('delete', [PublicationController::class, 'delete'])->name('pub_delete');
         Route::post('restore', [PublicationController::class, 'restore'])->name('pub_restore');
@@ -106,5 +108,8 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'auth'], function() {
         // Archives
         Route::get('archives', [PublicationController::class, 'archive'])->name('pub_archive');
     });
+
+    // Careers
+    Route::resource('careers', CareerController::class)->except('show')->shallow();
 });
 

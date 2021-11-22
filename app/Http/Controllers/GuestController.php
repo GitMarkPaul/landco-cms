@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PublicationCategories;
 use App\Models\Publication;
+use App\Models\Career;
 
 class GuestController extends Controller
 {
@@ -12,6 +13,7 @@ class GuestController extends Controller
     {
         $this->publication = new Publication;
         $this->pub_cat = new PublicationCategories;
+        $this->career = new Career;
     }
 
     public function index()
@@ -155,7 +157,15 @@ class GuestController extends Controller
 
     public function careers()
     {
-        return view('guest.careers');
+        $careers = $this->career->get_career_data();
+        return view('guest.careers', compact('careers'));
+    }
+
+    public function career_details($created_at, $slug)
+    {
+        $career_details = $this->career->get_career_details_by_slug($slug);
+
+        return view('guest.career-details', compact('career_details'));
     }
 
     public function publications()

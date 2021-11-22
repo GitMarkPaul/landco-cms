@@ -119,6 +119,12 @@
                                 </div>
                             </li>
                             <li class="tf-aside-items">
+                                <a href="{{ route('careers.index') }}">
+                                    <i class="bi bi-people"></i>
+                                    <span class="{{ Request::is('admin/careers') ? 'text-primary fw-bold' : ''}}">Careers</span> 
+                                </a>
+                            </li>
+                            <li class="tf-aside-items">
                                 <a href="{{ route('settings') }}">
                                     <i class="bi bi-gear-fill"></i>
                                     <span class="{{ Request::is('admin/settings/index') ? 'text-primary fw-bold' : ''}}">Settings</span> 
@@ -144,6 +150,7 @@
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    @stack('scripts')
     @yield('scripts')
 </body>
 </html>
