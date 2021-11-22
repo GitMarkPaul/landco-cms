@@ -1,8 +1,9 @@
-.tf-app {
+.app {
     .dropdown-menu {
         border: none;
         box-shadow: $tf-card-box-shadow;
         transform: translate(70px -37px) !important;
+        margin-top: 24px !important;
     
         .dropdown-item {
             font-size: 14px;
@@ -15,7 +16,7 @@
                 background-color: transparent;
             }
 
-            ion-icon {
+            .bi {
                 margin-right: 10px;
             }
     
@@ -24,6 +25,17 @@
                     font-size: 18px;
                     margin-right: 0;
                 }
+            }
+        }
+    }
+
+    .dropdown-menu-dark {
+        background-color: rgba(32, 33, 35, 1);
+        .dropdown-item {
+            margin-bottom: 8px;
+            .bi, span {
+                font-weight: 500;
+                color: $tf-color-icon-d;
             }
         }
     }

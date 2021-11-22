@@ -15,9 +15,103 @@ $tf-color-info: #00d1ff;
 $tf-color-black: #2d3748;
 $tf-color-gray: #718096;
 $tf-color-white: #ffffff;
+$tf-color-icon: rgba(92, 95, 98, 1);
+$tf-color-icon-d: #c9c9c9;
+
+// Gray Color Variation
+
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000000 !default;
+
+
+// Colors
+
+$blue:          #0066ff !default;
+$gray:          #f9fafb !default;
+$green:         #129455 !default;
+$yellow:        #e4c30a !default;
+$red:           #E84B4B !default;
+$white:         #FFFFFF !default;
+
+$colors: (
+    "blue":                     $blue,
+    "gray":                     $gray,
+    "green":                    $green,
+    "yellow":                   $yellow,
+    "red":                      $red,
+    "black":                    $black,
+    "white":                    $white
+) !default;
+
+// Theme Colors
+
+$primary:                       $blue !default;
+$secondary:                     $gray !default;
+$success:                       $green !default;
+$warning:                       $yellow !default;
+$danger:                        $red !default;
+$light:                         $white !default;
+$dark:                          $gray-800 !default;
+
+$theme-colors: (
+    "primary":                  $primary,
+    "secondary":                $secondary,
+    "success":                  $success,
+    "warning":                  $warning,
+    "danger":                   $danger,
+    "light":                    $light,
+    "dark":                     $dark
+) !default;
 
 // Font
-$tf-default-font: 'Poppins', sans-serif;
+$tf-default-font: 'Inter Regular', sans-serif;
+$tf-default-font-bold: 'Inter Bold', sans-serif;
+$font-family-sans-serif: 'Inter Regular', sans-serif !default;
+$font-family-bold: 'Inter Bold', sans-serif !default;
 
+@font-face {
+    font-family: 'Inter Regular';
+    font-style: normal;
+    src: url('../../../public/fonts/Inter-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Inter Bold';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../../../public/fonts/Inter-Bold.ttf');
+}
 // Box Shadow
 $tf-card-box-shadow: 0 0 2px 0 rgba(76, 87, 125, 0.2);
+
+// Inputs
+
+$input-bg: $gray-100 !default;
+$input-border-radius: 6px !default;
+$input-border-color: $gray-400 !default;
+$input-box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px !default;
+$input-text-color: $gray-700 !default;
+$input-focus-border-color: tint-color($gray-600, 50%) !default;
+$input-focus-bg: $white !default;
+$input-transition: 2ms ease-in-out !default;
+
+// Buttons
+
+$btn-padding-xl:                24px 56px !default;
+$btn-padding-lg:                16px 40px !default;
+$btn-padding-md:                14px 32px !default;
+$btn-padding-sm:                8px 16px !default;
+$btn-padding-default:           12px 24px !default;
+$btn-border-radius:             6px !default;
+$btn-rounded:                   24px !default;
+$btn-box-shadow:                rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px !default;
+$btn-font-size:                 14px !default;
+$btn-font-weight:               400 !default;

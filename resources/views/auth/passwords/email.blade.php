@@ -5,7 +5,7 @@
     <div class="container container-center">
         <div class="row">
             <div class="col-xl-5 col-lg-5">
-                <div class="tf-card">
+                <div class="card">
                     <div class="card-body">
                         <h4 class="text-center">{{ __('Reset Password') }}</h4>
                         <form method="POST" action="{{ route('password.email') }}">

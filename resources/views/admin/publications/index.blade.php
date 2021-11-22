@@ -25,7 +25,7 @@
             @endif
             <div class="col">
                 <div class="d-flex justify-content-end">
-                    <a href="{{ route('pub_create') }}" class="tf-btn tf-btn-primary"><ion-icon name="add"></ion-icon>Add New Article</a>
+                    <a href="{{ route('pub_create') }}" class="tf-btn btn-primary"><i class="bi bi-plus-square"></i> Add New Article</a>
                 </div>
             </div>
             <div class="col">
@@ -51,11 +51,7 @@
                                     <td>{{ $value->author }}</td>
                                     <td>{{ $value->created_at->format('M d, Y') }}</td>
                                     <td class="text-center">
-                                        @if ($value->status === 'Active')
-                                            <span class="badge rounded-pill bg-success">{{ $value->status }}</span>
-                                        @else
-                                            <span class="badge rounded-pill bg-secondary">{{ $value->status }}</span>
-                                        @endif
+                                        {{ $value->status }}
                                     </td>
                                     <td>
                                         <div class="dropdown d-flex justify-content-center dropend">
@@ -63,9 +59,9 @@
                                                 Settings
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li><a class="dropdown-item" href="{{ $value->meta_link }}" target="_blank" rel="noopener noreferrer"><ion-icon name="open"></ion-icon> View Article</a></li>
-                                                <li><a class="dropdown-item" href="{{ route('pub_edit', $value->slug_url) }}"><ion-icon name="pencil"></ion-icon> Edit Blog</a></li>
-                                                <li><a class="dropdown-item delete" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}"><ion-icon name="trash"></ion-icon>Delete</a></li>
+                                                <li><a class="dropdown-item" href="{{ $value->meta_link }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Article</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('pub_edit', $value->slug_url) }}"><i class="bi bi-pencil"></i> Edit Blog</a></li>
+                                                <li><a class="dropdown-item delete" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}"><i class="bi bi-trash"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>

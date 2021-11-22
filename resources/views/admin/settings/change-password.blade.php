@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <button type="submit" class="tf-btn tf-btn-primary tf-btn-lg w-100 text-uppercase">Update Password</button>
+                                    <button type="submit" class="btn btn-dark tf-btn-lg w-100">Update Password</button>
                                 </div>
                             </div>
                         </form>

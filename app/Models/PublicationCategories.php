@@ -36,7 +36,7 @@ class PublicationCategories extends Model
 
     public function get_pub_cat_data()
     {
-        return $this->orderBy('updated_at', 'DESC')->get(['category_name', 'status', 'id']);
+        return $this->orderBy('updated_at', 'DESC')->get(['slug_url', 'category_name', 'status', 'id']);
     }
 
     public function store_pub_category_data($request, $user_id, $role_id)

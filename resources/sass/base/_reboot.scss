@@ -23,13 +23,18 @@ body {
     margin: 0;
 }
 
-.tf-app {
+.app {
     a {
         text-decoration: none;
         color: $tf-color-black;
     }
 
+    p {
+        font-size: 16px;
+    }
+
     h1, h2, h3, h4, h5, h6 {
+        font-family: $tf-default-font-bold;
         color: $tf-color-black;
     }
 
@@ -44,8 +49,8 @@ body {
         margin: 0;
     }
 
-    ion-icon {
+    .bi {
         font-size: 18px;
-        color: $tf-color-gray;
+        color: $tf-color-black;
     }
 }

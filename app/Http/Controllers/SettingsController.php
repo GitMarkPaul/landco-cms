@@ -21,6 +21,16 @@ class SettingsController extends Controller
     }
 
     /**
+     * Website Information Index
+     *
+     * @return void
+     */
+    public function website()
+    {
+        return view('admin.settings.website-info');
+    }
+
+    /**
      * File Manager Index
      *
      * @return void

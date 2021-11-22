@@ -1,11 +1,11 @@
 @extends('layouts.auth')
 
 @section('content')
-<section>
-    <div class="container container-center">
-        <div class="row">
+<section class="mt-5 pt-5">
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-5">
-                <div class="tf-card">
+                <div class="card">
                     <div class="card-body">
                         <h4 class="text-center">Login to your account</h4>
                         <form method="POST" action="{{ route('login') }}">

@@ -125,6 +125,7 @@ class Publication extends Model
     {
         return $this->orderBy('updated_at', 'DESC')->get([
             'id',
+            'file_id',
             'slug_url',
             'title',
             'category_id',

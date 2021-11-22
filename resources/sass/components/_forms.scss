@@ -1,18 +1,17 @@
-.tf-form-control {
+.form-control {
     display: block;
+    font-size: 14px;
+    font-weight: 500;
     width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #f5f5f7;
-    border: 1px solid #ced4da;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    padding: 14px;
+    color: $input-text-color;
+    box-shadow: $input-box-shadow;
+    border-radius: $input-border-radius;
+    border: 1px solid $input-border-color;
+    background-color: $input-bg;
+    background-clip: padding-box;
     appearance: none;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: $input-transition;
 
     &:focus {
 		color: #1e2022;
@@ -22,7 +21,7 @@
 	}
 }
 
-.tf-app {
+.app {
     .input-group {
         .input-group-text {
             border: none;

@@ -1,11 +1,11 @@
 tinymce.init({
 	selector: 'textarea.content-editor',
 	menubar: false,
-	plugins: 'preview searchreplace autosave autoresize directionality visualblocks visualchars fullscreen imagetools image link charmap hr pagebreak nonbreaking toc advlist lists wordcount textpattern help charmap code table',
+	plugins: 'preview searchreplace autosave autoresize directionality visualblocks visualchars fullscreen imagetools image link charmap hr nonbreaking toc advlist lists wordcount textpattern help charmap code table',
     mobile: {
-        plugins: 'preview searchreplace autosave autoresize directionality visualblocks visualchars fullscreen image link charmap hr pagebreak nonbreaking toc advlist lists wordcount textpattern help charmap code table'
+        plugins: 'preview searchreplace autosave autoresize directionality visualblocks visualchars fullscreen image link charmap hr nonbreaking toc advlist lists wordcount textpattern help charmap code table'
     }, 
-	toolbar: 'undo redo | bold italic underline strikethrough | fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap | fullscreen  preview | insertfile image link | ltr rtl | table | code',
+	toolbar: 'undo redo | bold italic underline strikethrough | fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | charmap | fullscreen  preview | insertfile image link | table | code',
 	/* enable title field in the Image dialog*/
 	image_title: true,
 	autosave_ask_before_unload: true,

@@ -26,12 +26,12 @@
             @endif
             <div class="col">
                 <div class="d-flex justify-content-end">
-                    <button type="button" class="tf-btn tf-btn-primary" data-bs-toggle="modal" data-bs-target="#createCategory"><ion-icon name="add"></ion-icon>Add New Category</button>
+                    <button type="button" class="tf-btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCategory">Add New Category</button>
                 </div>
             </div>
             <div class="col">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th class="text-center">No.</th>
@@ -48,7 +48,7 @@
                                     <td class="text-center">{{ $value->status }}</td>
                                     <td>
                                         <div class="dropdown d-flex justify-content-center dropend">
-                                            <button class="tf-btn tf-btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <button class="tf-btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Settings
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">

@@ -21,7 +21,7 @@
                 <div class="col-xl-9">
                     <div class="row row-cols-1 g-4">
                         <div class="col">
-                            <div class="tf-card">
+                            <div class="card">
                                 <div class="card-body">
                                     <div class="row row-cols-1 g-4">
                                         <div class="col">
@@ -52,7 +52,7 @@
                                         <div class="col">
                                             <label for="title" class="form-label">Redirection Link Only</label>
                                             <div class="input-group">
-                                                <span class="input-group-text" id="vanity_link"><ion-icon name="link-outline"></ion-icon></span>
+                                                <span class="input-group-text" id="vanity_link"><i class="bi bi-link"></i></span>
                                                 <input type="text" name="meta_link" class="form-control @error('meta_link') is-invalid @enderror" placeholder="Paste the link here..." value="{{ $pub_details->meta_link }}" aria-label="Vanity" aria-describedby="vanity_link">
                                             </div>
                                             <div class="form-text">Note: This link serves as the redirection to the article that is already published</div>
@@ -68,11 +68,11 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="tf-card">
+                            <div class="card">
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="title" class="form-label">Content</label>
-                                        <textarea name="content" class="form-control content-editor" placeholder="Write some content here..">{{ $pub_details->content }}</textarea>
+                                        <textarea name="content" class="form-control content-editor" placeholder="Write some content here..">{!! $pub_details->content !!}</textarea>
             
                                         @error('content')
                                             <span class="invalid-feedback" role="alert">
@@ -88,7 +88,7 @@
                 <div class="col-xl-3">
                     <div class="row row-cols-1 g-4">
                         <div class="col">
-                            <div class="tf-card">
+                            <div class="card">
                                 <div class="card-body">
                                     <div class="row row-cols-1 g-4">
                                         <div class="col">
@@ -108,7 +108,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="tf-card">
+                            <div class="card">
                                 <div class="card-body">
                                     <div class="row row-cols-1 g-4">
                                         <div class="col">
@@ -171,7 +171,7 @@
                                         <div class="col">
                                             <label for="title" class="form-label">Location</label>
                                             <div class="input-group">
-                                                <span class="input-group-text" id="location"><ion-icon name="location-outline"></ion-icon></span>
+                                                <span class="input-group-text" id="location"><i class="bi bi-geo-alt"></i></span>
                                                 <input type="text" name="location" class="form-control @error('location') is-invalid @enderror" placeholder="Type the location (optional)" value="{{ $pub_details->location }}" aria-label="File Link" aria-describedby="location">
         
                                                 @error('location')
@@ -187,7 +187,7 @@
                         </div>
 
                         <div class="col">
-                            <div class="tf-card">
+                            <div class="card">
                                 <div class="card-body">
                                     <div class="row row-cols-1 g-4">
                                         <div class="col">
@@ -207,7 +207,7 @@
                                         <div class="col">
                                             <label for="title" class="form-label">File Link</label>
                                             <div class="input-group">
-                                                <span class="input-group-text" id="file_link"><ion-icon name="image-outline"></ion-icon></span>
+                                                <span class="input-group-text" id="file_link"><i class="bi bi-image"></i></span>
                                                 <input type="text" name="file_link" class="form-control @error('file_link') is-invalid @enderror" placeholder="Paste the link here..." value="{{ $pub_details->file_link }}" aria-label="File Link" aria-describedby="file_link">
         
                                                 @error('file_link')
@@ -224,11 +224,11 @@
                     </div>
                 </div>
                 <div class="col-xl-12">
-                    <div class="tf-card fixed-bottom">
+                    <div class="card fixed-bottom position-fixed">
                         <div class="card-body">
                             <div class="d-flex justify-content-end">
-                                <a href="{{ route('pub_index') }}" class="tf-btn tf-btn-secondary mx-3">Cancel Editing</a>
-                                <button type="submit" class="tf-btn tf-btn-primary w-m-100"><ion-icon name="send"></ion-icon>Publish Changes</button>
+                                <a href="{{ route('pub_index') }}" class="tf-btn btn-default mx-3">Cancel Editing</a>
+                                <button type="submit" class="tf-btn btn-primary w-m-100"><ion-icon name="send"></ion-icon>Publish Changes</button>
                             </div>
                         </div>
                     </div>

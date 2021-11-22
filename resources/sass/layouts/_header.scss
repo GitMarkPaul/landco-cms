@@ -4,8 +4,8 @@
     left: 0;
     right: 0;
     background-color: $tf-color-white;
-    padding: 14px 12px;
-    box-shadow: $tf-card-box-shadow;
+    padding: 8px 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     z-index: 9;
 
     .tf-navbar {
@@ -17,9 +17,15 @@
             display: none;
         }
 
+        .logo {
+            width: 30px;
+            margin-right: 12px;
+        }
+
         .tf-merchant-name {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 500;
+            color: $tf-color-black;
         }
 
         .tf-navbar-menu {
@@ -49,12 +55,6 @@
                         }
                     }
 
-                }
-
-                .btn-group {
-                    .dropdown-menu {
-                        width: 300px;
-                    }
                 }
             }
         }

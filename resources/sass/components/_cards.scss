@@ -1,13 +1,14 @@
-.tf-card {
+.card {
     position: relative;
     background-color: $tf-color-white;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     box-shadow: $tf-card-box-shadow;
     display: flex;
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
+    --padding: 16px;
 
     .card-img {
         width: 100%;
@@ -30,8 +31,9 @@
     }
 
     .card-body {
+        padding: var(--padding);
         .card-title {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 0;
         }
         

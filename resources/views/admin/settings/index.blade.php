@@ -2,7 +2,7 @@
 
 @section('content')
 <section>
-    <div class="container-fluid">
+    <div class="container">
         <!-- Start: Breadcrumb -->
         <nav class="breadcrumb-nav" aria-label="breadcrumb">
             <h4 class="breadcrumb-heading">Settings</h4>
@@ -13,14 +13,31 @@
         </nav>
         <!-- End: Breadcrumb -->
 
-        <div class="row row-cols-xl-2 g-3">
+        <div class="row row-cols-xl-1 g-2">
+            <div class="col">
+                <a href="{{ route('website_details') }}">
+                    <div class="tf-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-icon bg-light">
+                                    <i class="bi bi-globe"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4 class="card-title">Website Details</h4>
+                                    <span>Manage websites information </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
             <div class="col">
                 <a href="{{ route('password') }}">
                     <div class="tf-card">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
-                                <div class="tf-bg-icon-md bg-light">
-                                    <ion-icon name="key-outline"></ion-icon>
+                                <div class="bg-icon bg-light">
+                                    <i class="bi bi-key-fill"></i>
                                 </div>
                                 <div class="ms-4">
                                     <h4 class="card-title">Password</h4>
@@ -36,8 +53,8 @@
                     <div class="tf-card">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
-                                <div class="tf-bg-icon-md bg-light">
-                                    <ion-icon name="person-outline"></ion-icon>
+                                <div class="bg-icon bg-light">
+                                    <i class="bi bi-person-fill"></i>
                                 </div>
                                 <div class="ms-4">
                                     <h4 class="card-title">Profile</h4>
@@ -53,12 +70,29 @@
                     <div class="tf-card">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
-                                <div class="tf-bg-icon-md bg-light">
-                                    <ion-icon name="image-outline"></ion-icon>
+                                <div class="bg-icon bg-light">
+                                    <i class="bi bi-image-fill"></i>
                                 </div>
                                 <div class="ms-4">
                                     <h4 class="card-title">Files</h4>
                                     <span>Manage your uploaded images</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="{{ route('files') }}">
+                    <div class="tf-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-icon bg-light">
+                                    <i class="bi bi-people-fill"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4 class="card-title">Users</h4>
+                                    <span>Manage users and authorization</span>
                                 </div>
                             </div>
                         </div>

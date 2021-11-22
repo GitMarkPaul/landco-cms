@@ -1,0 +1,223 @@
+@extends('layouts.guest')
+
+@section('content')
+<!-- .breadcrumb-area -->
+<section class="breadcrumb-area" style="background-image: url('{{ asset("assets/img/banners/banner-vision.jpg") }}');">
+    <div class="container">
+        <div class="breadcrumb-text">
+            <h2 class="page-title wow fadeInLeft" data-wow-delay="0.2s">Peninsula de Punta Fuego </h2>
+
+            <!-- .breadcrumb-nav -->
+            <ul class="breadcrumb-nav wow fadeInRight">
+                <li><a href="{{ route('index') }}">Home</a></li>
+                <li><a href="{{ route('projects') }}">Projects</a></li>
+                <li class="active">Peninsula de Punta Fuego</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- /.breadcrumb-area -->
+
+<!-- main content -->
+<section class="offers-area pt-120 pb-60">
+    <div class="container">
+        <div class="offer-boxes-loop">
+            <div class="offer-box">
+                <div class="thumb wow fadeInUp">
+                    <img src="{{ asset('assets/img/projects/peninsula-de-punta-fuego/main-img.jpg') }}" alt="images">
+                </div>
+                <div class="offer-desc">
+                    <div class="title-wrap pb-0">
+                        <div class="title col-lg-8 wow fadeInLeft">
+                            <h2>The premiere luxury seaside getaway in the Philippines</h2>
+                        </div>
+                        <div class="price col-lg-4 wow fadeInRight" data-wow-delay=".2s">                                
+                            <img src="{{ asset('assets/img/projects/peninsula-de-punta-fuego/logo.png') }}" alt="images">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between wow fadeInUp">
+                        <div class="col-lg-6">
+                            <div class="offer-text">
+                                <p>Peninsula de Punta Fuego is a premiere luxury seaside residential community situated on 88 hectares of pristine coastline in Nasugbu, Batangas. Its enviable location on a flame-shaped peninsula, one of only three that tread the Nasugbu coastline into the West Philippine Sea, makes it a unique and truly unforgettable location for luxury living in the Philippines.</p>
+                                <p>Peninsula de Punta Fuego is a veritable oceanside wonderland. It is home to a wide array of natural features, including twelve white-sand beaches, natural rock formations, coral reefs brimming with rich marine life and underwater caves that present excellent diving and snorkeling opportunities.</p>
+                                <p>Home to the most discriminating set, Peninsula de Punta Fuego offers a brilliant balance of luxury seaside living and natural beauty. Its Spanish-Mediterranean architecture and wide range of amenities, centered mostly around the breathtaking Club Punta Fuego, makes it the ultimate vacation getaway and an ideal home for the jetsetters who wish to live life to the fullest.</p>									
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="offer-feature">
+                                <h4>The sun never sets at Club Punta Fuego</h4>
+                                <p>Club Punta Fuego is a premiere seaside club located on Peninsula de Punta Fuego. It offers world-class services and amenities to its members. Enjoy exclusive access to a myriad seaside activities to satisfy even the most discerning individual.</p>
+                                <p>From dusk until dawn, Club Punta Fuego never fails to satisfy. Imagine taking an early morning stroll along the nine-hole Nelson-Haworth-designed executive golf course, which boasts of a majestic view of the West Philippine Sea. On a warm sunny day, indulge in aqua sports like diving, snorkeling, jet skiing and kayaking. Frolic on a private cove on one of our two beaches or take a boat out sailing. The double-infinity pool overlooking Sunset Cove is perfect for an afternoon swim while enjoying the sunset. After a day full of fun activities, you can enjoy the gastronomic delights served at Café San Diego or go al fresco in Il Jardineto at the Lower Beach Club.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end of main content -->
+
+<!-- .text-block -->
+<section class="text-block with-bg pt-115 pb-115" style="background-image: url('{{ asset("assets/img/bg/02.jpg") }}');">
+    <div class="container">
+        <div class="row align-items-center  justify-content-center wow fadeInLeft" data-wow-delay=".3s">
+            <div class="col-lg-7">
+                <div class="text-img text-center text-lg-left mb-small">
+                   <img src="{{ asset('assets/img/projects/peninsula-de-punta-fuego/img-1.jpg') }}" alt="images">
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-8 col-sm-10 wow fadeInRight" data-wow-delay=".5s">
+                <div class="block-text">
+                    <div class="section-title mb-20">
+                        <h3>The Ideal Balance of Business and Leisure Facilities and Amenities</h3>
+                    </div>
+                    <p>Aside from Club Punta Fuego, Peninsula de Punta Fuego also offers other facilities and amenities to ensure that every day offers a unique opportunity to make memories and live life to the fullest. The Members’ Lounge provides a cool and relaxing place to escape the summer heat. Enjoy a few games with family and friends at our mini-golf course or our game room which is expertly designed to provide activities to keep the kids coming back for more. If you need to plug into work for a few minutes, our fully equipped business center will make it easy to mix business with pleasure.</p>
+                    <p>Enjoy a truly relaxing and fun environment at the Peninsula de Punta Fuego!</p>						
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.text-block -->
+
+<!-- features -->
+<section class="section-amenities text-block bg-blue with-pattern">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-12">
+                <div class="block-text">
+                    <div class="section-title mb-20 wow fadeInLeft">
+                        <h2 class="fc-white">Features and Amenities</h2>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4 wow fadeInLeft" data-wow-delay=".2s">
+                            <ul class="list-icon">
+                                <li>Reception/Village Center</li>
+                                <li>Lobby/waiting lounge</li>
+                                <li>Main reception/info area</li>
+                                <li>Village office</li>
+                                <li>Clinic</li>
+                                <li>Country club</li>
+                                <li>Cafe San Diego dining room</li>
+                                <li>Members’ Lounge</li>
+                                <li>Function rooms</li>
+                                <li>Sports facilities (squash court and outdoor tennis court)</li>
+                                <li>Locker rooms</li>
+                                <li>Mini-theater</li>
+                                <li>Kiddie pool</li>
+                                <li>Double infinity pool</li>
+                                <li>Spa services</li>
+                                <li>Casitas</li>
+                                <li>Boutique hotel composed of clusters of cottage-style accommodations (33 rooms)</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 wow fadeInLeft" data-wow-delay=".3s">
+                            <ul class="list-icon">
+                                <li>Beach Club</li>
+                                <li>Upper Beach Club with single infinity pool</li>
+                                <li>Lower Beach Club with swimming pools</li>
+                                <li>Nine-hole Golf course and golf club</li>
+                                <li>Nine-hole resort golf course designed by Nelson-Haworth</li>
+                                <li>360-degree view of the sea</li>
+                                <li>Our Lady of Guadalupe Chapel</li>
+                                <li>Features artwork of National Artist Eduardo Castillo</li>
+                                <li>Beaches</li>
+                                <li>Twelve coral-white-sand beaches</li>
+                                <li>South marina</li>
+                                <li>International full-service marina with berthing and mooring areas</li>
+                                <li>Central parking</li>
+                                <li>Helipad</li>
+                                <li>Parks</li>
+                            </ul>
+                        </div>
+                    </div>	
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pattern-wrap">
+        <div class="pattern"></div>
+    </div>
+</section>
+<!-- features ends -->
+
+<!-- map -->
+<section class="cta-section quick-facts pt-115 pb-100">
+    <div class="container">
+        <div class="cta-inner">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col-sm-9 col-10 order-2 order-lg-1 wow fadeInLeft">
+                    <img src="{{ asset('assets/img/projects/peninsula-de-punta-fuego/quick-fact-img.jpg') }}" alt="images">
+                </div>
+                <div class="col-lg-6 col-md-10 col-sm-11 col-10 order-1 order-lg-2 wow fadeInUp">
+                    <h3>Quick Facts</h3>
+
+                    <!-- feature loop -->
+                    <div class="cta-features">							
+                        <!-- feature box -->
+                        <div class="single-feature mb-0 wow fadeInUp">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <path d="M560 160c-2 0-4 .4-6 1.2L384 224l-10.3-3.6C397 185.5 416 149.2 416 123 416 55 358.7 0 288 0S160 55.1 160 123c0 11.8 4 25.8 10.4 40.6L20.1 216C8 220.8 0 232.6 0 245.7V496c0 9.2 7.5 16 16 16 2 0 4-.4 6-1.2L192 448l172 60.7c13 4.3 27 4.4 40 .2L555.9 456c12.2-4.9 20.1-16.6 20.1-29.7V176c0-9.2-7.5-16-16-16zM176 419.8L31.9 473l-1.3-226.9L176 195.6zM288 32c52.9 0 96 40.8 96 91 0 27-38.1 88.9-96 156.8-57.9-67.9-96-129.8-96-156.8 0-50.2 43.1-91 96-91zm80 444.2l-160-56.5V228.8c24.4 35.3 52.1 68 67.7 85.7 3.2 3.7 7.8 5.5 12.3 5.5s9-1.8 12.3-5.5c12.8-14.5 33.7-39.1 54.3-66.9l13.4 4.7zm32 .2V252.2L544.1 199l1.3 226.9zM312 128c0-13.3-10.8-24-24-24s-24 10.7-24 24c0 13.2 10.8 24 24 24s24-10.7 24-24z" />
+                                </svg>
+                            </div>
+                            <div class="cta-desc">
+                                <h4 class="mb-0">Location</h4>
+                                <p>Nasugbu, Batangas</p>
+                            </div>
+                        </div>
+                        
+                        <!-- feature box -->
+                        <div class="single-feature mb-0 wow fadeInUp" data-wow-delay=".2s">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path d="M337.782 434.704l-73.297 73.782c-4.686 4.686-12.284 4.686-16.971 0l-73.296-73.782c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.07c4.686-4.686 12.284-4.686 16.971 0L239 451.887h1V272H60.113v1l41.224 40.741c4.686 4.686 4.686 12.284 0 16.971l-7.071 7.07c-4.686 4.686-12.284 4.686-16.97 0L3.515 264.485c-4.686-4.686-4.686-12.284 0-16.971l73.782-73.297c4.686-4.686 12.284-4.686 16.971 0l7.071 7.071c4.686 4.686 4.686 12.284 0 16.971L60.113 239v1H240V60.113h-1l-40.741 41.224c-4.686 4.686-12.284 4.686-16.971 0l-7.07-7.071c-4.686-4.686-4.687-12.284 0-16.97l73.297-73.782c4.686-4.686 12.284-4.686 16.971 0l73.297 73.782c4.686 4.686 4.686 12.284 0 16.971l-7.071 7.071c-4.686 4.686-12.284 4.686-16.971 0L273 60.113h-1V240h179.887v-1l-41.224-40.741c-4.686-4.686-4.686-12.284 0-16.971l7.071-7.07c4.686-4.686 12.284-4.686 16.97 0l73.782 73.297c4.687 4.686 4.686 12.284 0 16.971l-73.782 73.297c-4.686 4.686-12.284 4.686-16.97 0l-7.071-7.07c-4.686-4.686-4.686-12.284 0-16.971L451.887 273v-1H272v179.887h1l40.741-41.224c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.686 4.685 4.686 12.283 0 16.97z"/>
+                                </svg>
+                            </div>
+                            <div class="cta-desc">
+                                <h4 class="mb-0">Total Project Area</h4>
+                                <p>88 hectares</p>
+                            </div>
+                            <div class="inquire-box">
+                                <a href="{{ route('contact_us') }}" class="main-btn btn-filled">Inquire Now</a>
+                            </div>
+                        </div>							
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- map ends -->
+    
+<!-- .section-gallery -->
+<section class="section-gallery instagram-feed-section">
+    <div class="container-fluid p-0">
+        <div class="instagram-slider">
+            <div class="image wow fadeInUp">
+                <a href="{{ asset('assets/img/projects/peninsula-de-punta-fuego/gallery/1.jpg') }}" class="insta-popup">
+                    <img src="{{ asset('assets/img/projects/peninsula-de-punta-fuego/gallery/1.jpg') }}" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image wow fadeInUp" data-wow-delay=".2s">
+                <a href="{{ asset('assets/img/projects/peninsula-de-punta-fuego/gallery/2.jpg') }}" class="insta-popup">
+                    <img src="{{ asset('assets/img/projects/peninsula-de-punta-fuego/gallery/2.jpg') }}" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image wow fadeInUp" data-wow-delay=".3s">
+                <a href="{{ asset('assets/img/projects/peninsula-de-punta-fuego/gallery/3.jpg') }}" class="insta-popup">
+                    <img src="{{ asset('assets/img/projects/peninsula-de-punta-fuego/gallery/3.jpg') }}" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image wow fadeInUp" data-wow-delay=".4s">
+                <a href="{{ asset('assets/img/projects/peninsula-de-punta-fuego/gallery/4.jpg') }}" class="insta-popup">
+                <img src="{{ asset('assets/img/projects/peninsula-de-punta-fuego/gallery/4.jpg') }}" alt="instagram-feed">
+                </a>
+            </div>                
+        </div>
+    </div>
+</section>
+<!-- /.section-gallery -->
+@endsection

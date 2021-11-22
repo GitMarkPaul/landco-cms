@@ -1,11 +1,12 @@
-.tf-app {
+.app {
     .tf-aside {
         position: fixed;
         top: 0;
         left: 0;
         width: inherit;
         height: 100vh;
-        background-color: $tf-color-white;
+        background-color: transparent;
+        border-right: 1px solid #e3e2e2;
         padding-top: 20px;
         z-index: 6;
 
@@ -22,9 +23,19 @@
                     grid-gap: 16px;
 
 
-                    .tf-aside-chevron-down {
+                    .aside-chevron-down {
                         position: absolute;
-                        right: 32px;
+                        right: 16px;
+                    }
+
+                    .bi {
+                        font-size: 18px;    
+                    }
+
+                    span {
+                        font-family: $tf-default-font-bold;
+                        font-weight: 600;
+                        color: $tf-color-black;
                     }
                 }
 
@@ -35,10 +46,10 @@
 
                     li {
                         margin-bottom: 16px;
-
+                        
                         span {
-                            font-weight: 400;
-                            color: $tf-color-black;
+                            font-weight: 500;
+                            color: $tf-color-gray;
                         }
                     }
                 }
@@ -48,7 +59,7 @@
                 font-size: 13px;
                 font-weight: 600;
                 padding-bottom: 24px;
-                color: $tf-color-gray;
+                color: $tf-color-black;
             }
 
             .tf-mobile-logout {
