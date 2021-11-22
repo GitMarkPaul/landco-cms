@@ -52,8 +52,12 @@ Route::group(['prefix' => 'projects/beachtowns'], function() {
 });
 Route::get('faq', [GuestController::class, 'faq'])->name('faq');
 Route::get('privilege-club', [GuestController::class, 'privilege_club'])->name('privilege_club');
+Route::get('publications/blogs', [GuestController::class, 'blogs'])->name('publications.blogs');
+Route::get('publications/news', [GuestController::class, 'news'])->name('publications.news');
+Route::get('publications/media', [GuestController::class, 'media'])->name('publications.media');
+Route::get('publications/magazine', [GuestController::class, 'magazine'])->name('publications.magazine');
 Route::get('publications', [GuestController::class, 'publications'])->name('publications');
-Route::get('publications/details/{slug_url}', [GuestController::class, 'details'])->name('details');
+Route::get('publications/details/{created_at}/{slug_url}', [GuestController::class, 'details'])->name('details');
 Route::get('careers', [GuestController::class, 'careers'])->name('careers');
 Route::get('careers/{created_at}/{slug}', [GuestController::class, 'career_details'])->name('career_details');
 Route::get('contact-us', [GuestController::class, 'contact_us'])->name('contact_us');

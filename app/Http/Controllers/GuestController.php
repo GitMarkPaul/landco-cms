@@ -168,6 +168,30 @@ class GuestController extends Controller
         return view('guest.career-details', compact('career_details'));
     }
 
+    public function blogs()
+    {
+        $publications = $this->publication->get_pub_data();
+        return view('guest.blogs',  compact('publications'));
+    }
+
+    public function news()
+    {
+        $publications = $this->publication->get_pub_data();
+        return view('guest.news',  compact('publications'));
+    }
+
+    public function media()
+    {
+        $publications = $this->publication->get_pub_data();
+        return view('guest.media',  compact('publications'));
+    }
+
+    public function magazine()
+    {
+        $publications = $this->publication->get_pub_data();
+        return view('guest.magazine',  compact('publications'));
+    }
+
     public function publications()
     {
         $pubs = $this->publication->get_pub_data();
@@ -175,7 +199,7 @@ class GuestController extends Controller
         return view('guest.publication', compact('pubs', 'categories'));
     }
 
-    public function details($slug_url)
+    public function details($created_at, $slug_url)
     {
         $details = $this->publication->get_details($slug_url);
 

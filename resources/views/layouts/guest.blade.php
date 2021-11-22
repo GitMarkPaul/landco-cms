@@ -137,10 +137,10 @@
 							<div class="col-lg-6 mb-5 wow fadeInLeft" data-wow-delay="0.4s">
                                 <h4 class="widget-title">Publications</h4>
                                 <ul>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="media.html">Media</a></li>
-                                    <li><a href="news.html">News and Features</a></li>
-                                    <li><a href="magazine.html">Landco Magazine</a></li>
+                                    <li><a href="{{ route('publications.blogs') }}">Blog</a></li>
+                                    <li><a href="{{ route('publications.media') }}">Media</a></li>
+                                    <li><a href="{{ route('publications.news') }}">News and Features</a></li>
+                                    <li><a href="{{ route('publications.magazine') }}">Landco Magazine</a></li>
                                     <li class="hidden"><a href="construction.html">Construction Updates</a></li>
                                 </ul>
                             </div>
