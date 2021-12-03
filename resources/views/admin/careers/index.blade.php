@@ -25,7 +25,7 @@
             @endif
             <div class="col">
                 <div class="d-flex justify-content-end">
-                    <a href="{{ route('careers.create') }}" class="tf-btn btn-primary"><i class="bi bi-plus-square"></i> Add New Job Posting</a>
+                    <a href="{{ route('careers.create') }}" class="button dark text-white">Add New Job Posting</a>
                 </div>
             </div>
             <div class="col">
@@ -33,7 +33,7 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th class="text-center">No.</th>
+                                <th width="4%" class="text-center">No.</th>
                                 <th width="35%">Title</th>
                                 <th>Date Posted</th>
                                 <th class="text-center">Status</th>
@@ -45,14 +45,12 @@
                                 <tr>
                                     <td class="text-center">{{ ++$key }}</td>
                                     <td class="w-space-normal">{{ $value->title }}</td>
-                                    <td>{{ Carbon\Carbon::parse($value->created_at)->format('MM d, Y') }}</td>
-                                    <td class="text-center">
-                                        {{ $value->status }}
-                                    </td>
+                                    <td>{{ Carbon\Carbon::parse($value->created_at)->format('M d, Y') }}</td>
+                                    <td class="text-center">{{ $value->status }}</td>
                                     <td>
                                         <div class="dropdown d-flex justify-content-center dropend">
-                                            <button class="tf-btn tf-btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Settings
+                                            <button class="button sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots text-muted"></i>
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                 <li><a class="dropdown-item" href="{{ route('careers.edit', $value->slug) }}"><i class="bi bi-pencil"></i> Edit Job Posting</a></li>
@@ -86,8 +84,8 @@
                     <p>This will remove this post from your blog. You will no longer be able to view or edit it once deleted.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="button" class="button dark" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="button danger">Delete</button>
                 </div>
             </form>
         </div>

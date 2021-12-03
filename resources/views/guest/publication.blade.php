@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col-md-12 mb-5">
                 <div class="button-group filter-button-group wow fadeInUp">
-                    {{-- <button data-filter="*" class="is-checked">All</button> --}}
+                    <button data-filter="*" class="is-checked">All</button>
                     @foreach ($categories as $key => $value)
                         <button data-filter=".grid-{{ $value->slug_url }}">{{ $value->category_name }}</button>
                     @endforeach
@@ -72,8 +72,7 @@
 <script src="{{ asset('assets/js/wow.min.js') }}"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-<script>
-    // imageLoad		
+<script>		
     $('.grid').imagesLoaded()
         .always( function( instance ) {
         console.log('all images loaded');
@@ -88,28 +87,21 @@
     var result = image.isLoaded ? 'loaded' : 'broken';
         console.log( 'image is ' + result + ' for ' + image.img.src );
     });
-    
-    // init Isotope				
     var $grid = $('.grid').isotope({
-        // options
         itemSelector: '.grid-item',
         layoutMode: 'fitRows'
     });	
     
-    // filter items on button click
     $('.filter-button-group').on( 'click', 'button', function() {
         var filterValue = $(this).attr('data-filter');
         $grid.isotope({ filter: filterValue });
     });
     
-    // bind filter button click
     $('.filters-button-group').on( 'click', 'button', function() {
         var filterValue = $( this ).attr('data-filter');
-        // use filterFn if matches value
         filterValue = filterFns[ filterValue ] || filterValue;
         $grid.isotope({ filter: filterValue });
     });
-    // change is-checked class on buttons
     $('.button-group').each( function( i, buttonGroup ) {
         var $buttonGroup = $( buttonGroup );
         $buttonGroup.on( 'click', 'button', function() {

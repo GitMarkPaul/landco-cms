@@ -26,15 +26,15 @@
             @endif
             <div class="col">
                 <div class="d-flex justify-content-end">
-                    <button type="button" class="tf-btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCategory">Add New Category</button>
+                    <button type="button" class="button dark" data-bs-toggle="modal" data-bs-target="#createCategory">Add New Category</button>
                 </div>
             </div>
             <div class="col">
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th class="text-center">No.</th>
+                                <th width="4%" class="text-center">No.</th>
                                 <th>Name</th>
                                 <th class="text-center">Status</th>
                                 <th class="text-center">Action</th>
@@ -48,8 +48,8 @@
                                     <td class="text-center">{{ $value->status }}</td>
                                     <td>
                                         <div class="dropdown d-flex justify-content-center dropend">
-                                            <button class="tf-btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Settings
+                                            <button class="button secondary sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots text-muted"></i>
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                 <li><a class="dropdown-item edit" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}" data-category_name="{{ $value->category_name }}" data-status="{{ $value->status }}"><ion-icon name="create"></ion-icon> Edit Category</a></li>
@@ -97,8 +97,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="button" class="button dark" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="button success">Submit</button>
                 </div>
             </form>
         </div>
@@ -136,8 +136,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Update Changes</button>
+                    <button type="button" class="button dark" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="button primary">Update Changes</button>
                 </div>
             </form>
         </div>
@@ -159,8 +159,8 @@
                     <p>This will remove this post from your blog. You will no longer be able to view or edit it once deleted.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="button" class="button dark" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="button danger">Delete</button>
                 </div>
             </form>
         </div>
@@ -168,18 +168,18 @@
 </div>
 @endsection
 
-@section('scripts')
-    <script>
-        $(document).on('click', '.edit', function() {
-            $('#cat_id').val($(this).data('id'));
-            $('#cat_name').val($(this).data('category_name'));
-            $('#cat_status').val($(this).data('status'));
-            $('#editCategory').modal('show');
-		});
+@push('scripts')
+<script>
+    $(document).on('click', '.edit', function() {
+        $('#cat_id').val($(this).data('id'));
+        $('#cat_name').val($(this).data('category_name'));
+        $('#cat_status').val($(this).data('status'));
+        $('#editCategory').modal('show');
+    });
 
-        $(document).on('click', '.delete', function() {
-            $('#del_cat_id').val($(this).data('id'));
-            $('#deleteCategory').modal('show');
-		});
-    </script>
-@endsection
+    $(document).on('click', '.delete', function() {
+        $('#del_cat_id').val($(this).data('id'));
+        $('#deleteCategory').modal('show');
+    });
+</script>
+@endpush

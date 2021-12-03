@@ -44,4 +44,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getInitialsAttribute()
+    {
+        return mb_substr($this->name, 0, 1);
+    }
 }

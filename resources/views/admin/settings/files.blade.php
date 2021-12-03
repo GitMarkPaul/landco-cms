@@ -26,7 +26,7 @@
             @endif
             <div class="col">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-sm">
+                    <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th width="6%" class="text-center">No.</th>
@@ -53,8 +53,8 @@
                                     <td class="text-center">{{ $value->updated_at->format('M d, Y') }}</td>
                                     <td>
                                         <div class="dropdown d-flex justify-content-center dropend">
-                                            <button class="tf-btn tf-btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Settings
+                                            <button class="button secondary sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots text-muted"></i>
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                 <li><a class="dropdown-item rename" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}" data-original_file_name="{{ $value->original_file_name }}"><ion-icon name="pencil"></ion-icon> Rename</a></li>

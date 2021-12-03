@@ -77,9 +77,6 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'auth'], function() {
     Route::group(['prefix' => 'settings/'], function() {
         Route::get('index', [SettingsController::class, 'index'])->name('settings');
 
-        // Website Information
-        Route::get('website-information', [SettingsController::class, 'website'])->name('website_details');
-
         // File Manager
         Route::get('file-manager', [SettingsController::class, 'files'])->name('files');
         Route::put('rename', [SettingsController::class, 'rename'])->name('file_rename');

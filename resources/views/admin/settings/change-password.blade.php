@@ -40,7 +40,7 @@
             </div>
             @endif
             <div class="col-xl-6 col-lg-9 col-md-10 col-12">
-                <div class="tf-card">
+                <div class="card">
                     <div class="card-body">
                         <form method="POST" action="{{ route('update_password') }}">
                             @csrf
@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <button type="submit" class="btn btn-dark tf-btn-lg w-100">Update Password</button>
+                                    <button type="submit" class="button dark md block">Update Password</button>
                                 </div>
                             </div>
                         </form>

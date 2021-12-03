@@ -5,9 +5,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-5">
+                <h4 class="text-center pb-3">{{ __('Login Your Account') }}</h4>
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="text-center">Login to your account</h4>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="row g-3 mt-3">
@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
-                                    <button type="submit" class="btn btn-dark tf-btn-lg w-100">Login</button>
+                                    <button type="submit" class="button dark md block">Login</button>
                                 </div>
                                 <div class="col-xl-12 text-center">
                                     @if (Route::has('password.request'))

@@ -25,7 +25,7 @@
             @endif
             <div class="col">
                 <div class="d-flex justify-content-end">
-                    <a href="{{ route('pub_create') }}" class="tf-btn btn-primary"><i class="bi bi-plus-square"></i> Add New Article</a>
+                    <a href="{{ route('pub_create') }}" class="button dark text-white">Add New Article</a>
                 </div>
             </div>
             <div class="col">
@@ -55,8 +55,8 @@
                                     </td>
                                     <td>
                                         <div class="dropdown d-flex justify-content-center dropend">
-                                            <button class="tf-btn tf-btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Settings
+                                            <button class="button secondary sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots text-muted"></i>
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                 <li><a class="dropdown-item" href="{{ $value->meta_link }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Article</a></li>
@@ -91,8 +91,8 @@
                     <p>This will remove this post from your blog. You will no longer be able to view or edit it once deleted.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="button" class="button dark" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="button danger">Delete</button>
                 </div>
             </form>
         </div>
@@ -100,11 +100,11 @@
 </div>
 @endsection
 
-@section('scripts')
-    <script type="text/javascript">
-        $(document).on('click', '.delete', function() {
-            $('#pub_id').val($(this).data('id'));
-            $('#deleteModal').modal('show');
-		});
-    </script>
-@endsection
+@push('scripts')
+<script type="text/javascript">
+    $(document).on('click', '.delete', function() {
+        $('#pub_id').val($(this).data('id'));
+        $('#deleteModal').modal('show');
+    });
+</script>
+@endpush

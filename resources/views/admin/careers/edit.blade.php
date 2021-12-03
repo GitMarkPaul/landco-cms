@@ -154,8 +154,8 @@
                     <div class="card fixed-bottom position-fixed b-0">
                         <div class="card-body">
                             <div class="d-flex justify-content-end">
-                                <a href="{{ route('careers.index') }}" class="tf-btn btn-default mx-3">Back</a>
-                                <button type="submit" class="tf-btn btn-primary w-m-100"><i class="bi bi-send-fill"></i> Update Job Posting</button>
+                                <a href="{{ route('careers.index') }}" class="button secondary text-dark mx-3">Back</a>
+                                <button type="submit" class="button primary gap-2"><i class="bi bi-send-fill"></i> Update Job Posting</button>
                             </div>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
 </section>
 @endsection
 
-@section('scripts')
+@push('scripts')
 <script src="https://cdn.tiny.cloud/1/zzubw4vq5fyaxdgpcaxa4zcfx43wyxc62zr3ii3a73exoddc/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script type="text/javascript" src="{{ asset('js/editor.js') }}"></script>
 <script type="text/javascript">
@@ -183,4 +183,4 @@
         }
     }
 </script>
-@endsection
+@endpush

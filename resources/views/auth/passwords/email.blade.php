@@ -5,12 +5,12 @@
     <div class="container container-center">
         <div class="row">
             <div class="col-xl-5 col-lg-5">
+                <h4 class="text-center pb-3">{{ __('Reset Password') }}</h4>
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="text-center">{{ __('Reset Password') }}</h4>
                         <form method="POST" action="{{ route('password.email') }}">
                             @csrf
-                            <div class="row g-3 mt-3">
+                            <div class="row g-3">
                                 @if (session('status'))
                                     <div class="col-xl-12">
                                         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -33,7 +33,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
-                                    <button type="submit" class="btn btn-dark tf-btn-lg w-100">{{ __('Send Password Reset Link') }}</button>
+                                    <button type="submit" class="button dark md block">{{ __('Send Password Reset Link') }}</button>
                                 </div>
                                 <div class="col-xl-12 text-center">
                                     <a href="{{ route('login') }}" class="text-muted">Back to login</a>
