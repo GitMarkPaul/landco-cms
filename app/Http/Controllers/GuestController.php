@@ -211,4 +211,18 @@ class GuestController extends Controller
         return view('guest.contact-us');
     }
 
+    public function terms_of_use()
+    {
+        return view('guest.terms-of-use');
+    }
+
+    public function privacy_policy()
+    {
+        return view('guest.privacy-policy');
+    }
+
+    public function hlurb()
+    {
+        return view('guest.hlurb');
+    }
 }

@@ -188,14 +188,14 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-5 order-2 order-md-1 wow fadeInLeft">
-                        <p class="copyright-text copyright-two">Copyright &copy; Landco Pacific Corporation 2021 All Rights Reserved</p>
+                        <p class="copyright-text copyright-two">Copyright &copy; Landco Pacific Corporation {{ Carbon\Carbon::now()->format('Y') }}. All Rights Reserved</p>
                     </div>
                     <div class="col-lg-6 col-md-7 order-1 order-md-2 wow fadeInRight">
                         <div class="footer-menu text-center text-md-right">
                             <ul>
-                                <li><a href="terms-of-use.html">Terms of use</a></li>
-                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-								<li><a href="hlurb.html">HLURB</a></li>
+                                <li><a href="{{ route('terms_of_use') }}">Terms of use</a></li>
+                                <li><a href="{{ route('privacy_policy') }}">Privacy Policy</a></li>
+								<li><a href="{{ route('hlurb') }}">HLURB</a></li>
                             </ul>
                         </div>
                     </div>

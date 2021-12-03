@@ -61,6 +61,9 @@ Route::get('publications/details/{created_at}/{slug_url}', [GuestController::cla
 Route::get('careers', [GuestController::class, 'careers'])->name('careers');
 Route::get('careers/{created_at}/{slug}', [GuestController::class, 'career_details'])->name('career_details');
 Route::get('contact-us', [GuestController::class, 'contact_us'])->name('contact_us');
+Route::get('terms-of-use', [GuestController::class, 'terms_of_use'])->name('terms_of_use');
+Route::get('privacy-policy', [GuestController::class, 'privacy_policy'])->name('privacy_policy');
+Route::get('hlurb', [GuestController::class, 'hlurb'])->name('hlurb');
 
 # Password Reset
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
