@@ -54,11 +54,11 @@
                     <div class="card card-career">                         
                         <div class="card-body">
                             <div class="card-title justify-content-between">
-                                <h4 class="mb-2"><a href="{{ route('career_details', [Str::of($value->created_at->format('Y d m s'))->studly(), $value->slug]) }}">{{ $value->title }}</a></h4>
+                                <h4 class="mb-2"><a href="{{ route('career_details', [$value->date_posted, $value->slug]) }}">{{ $value->title }}</a></h4>
                                 <p class="mt-1"><i class="fal fa-calendar-alt mr-2"></i>{{ $value->created_at->format('M d, Y') }}</p>
                             </div>
                             <p><strong>Job Qualifications:</strong> {{ $value->excerpt }}</p>
-                            <a href="{{ route('career_details', [Str::of($value->created_at->format('Y d m s'))->studly(), $value->slug]) }}" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
+                            <a href="{{ route('career_details', [$value->date_posted, $value->slug]) }}" class="card-link"><i class="fal fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

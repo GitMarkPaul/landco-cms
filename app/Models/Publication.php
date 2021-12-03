@@ -161,4 +161,9 @@ class Publication extends Model
     {
         return $this->where('id', decrypt($request->id))->onlyTrashed()->forceDelete();
     }
+
+    public function getDatePublishedAttribute()
+    {
+        return Str::of($this->created_at->format('Y d m s'))->studly();
+    }
 }

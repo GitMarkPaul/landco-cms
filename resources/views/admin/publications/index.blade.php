@@ -60,7 +60,7 @@
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                 <li><a class="dropdown-item" href="{{ $value->meta_link }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Article</a></li>
-                                                <li><a class="dropdown-item" href="{{ route('pub_edit', [Str::of($value->created_at->format('Y d m s'))->studly(), $value->slug_url]) }}"><i class="bi bi-pencil"></i> Edit Blog</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('pub_edit', [$value->date_published, $value->slug_url]) }}"><i class="bi bi-pencil"></i> Edit Blog</a></li>
                                                 <li><a class="dropdown-item delete" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}"><i class="bi bi-trash"></i> Delete</a></li>
                                             </ul>
                                         </div>

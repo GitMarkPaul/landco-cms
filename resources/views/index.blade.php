@@ -509,15 +509,19 @@
                     if (!is_null($value->meta_link)) {
                         $link = $value->meta_link;
                     } else {
-                        $link = route('details', $value->slug_url);
+                        $link = route('details', [$value->date_published, $value->slug_url]);
                     }
                 @endphp
                 @if ($value->category->category_name === 'Blogs')
                     <div class="col-lg-4">
                         <div class="latest-post-box">
-                            <div class="post-img" style="background-image: url('{{ asset("storage/files/".$value->file->file_name) }}');"></div>
-                            <div class="post-desc">
-                                <h4><a href="{{ $link }}" target="_blank" rel="noopener">{{ Str::limit($value->title, 60) }}</a></h4>
+                            <div class="card">
+                                <a href="{{ $link }}" @if(!is_null($value->meta_link)) target="_blank" rel="noopener" @endif class="card-img-top">
+									<img src="{{ asset("storage/files/".$value->file->file_name) }}" alt="Image">
+								</a>
+                                <div class="card-body">
+                                    <h5 class="mb-0"><a href="{{ $link }}" @if(!is_null($value->meta_link)) target="_blank" rel="noopener" @endif>{{ Str::limit($value->title, 60) }}</a></h5>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -530,7 +534,7 @@
 <!-- /.latest-news -->
 @endsection
 
-@section('scripts')
+@push('scripts')
 <script src="{{ asset('assets/js/slideshow.js') }}"></script>
 <script>
     $(window).on('load', function() {
@@ -552,4 +556,4 @@
         });		
     });
 </script>
-@endsection
+@endpush

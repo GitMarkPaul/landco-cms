@@ -137,7 +137,7 @@ class CareerController extends Controller
         }
         
         if(!is_null($file)) {
-            $file_id = $file->id;
+            $file_id = $file_id;
         } else {
             $file_id = Null;
         }

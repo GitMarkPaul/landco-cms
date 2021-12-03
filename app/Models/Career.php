@@ -84,4 +84,9 @@ class Career extends Model
     {
         return $this->destroy($id);
     }
+
+    public function getDatePostedAttribute()
+    {
+        return Str::of($this->created_at->format('Y d m s'))->studly();
+    }
 }

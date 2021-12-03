@@ -8,7 +8,7 @@
             <h4 class="breadcrumb-heading">Manage Files</h4>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('settings') }}">Settings</a></li>
+                <li class="breadcrumb-item"><a nhref="{{ route('settings') }}">Settings</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Files</li>
             </ol>
         </nav>
@@ -26,7 +26,7 @@
             @endif
             <div class="col">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped">
+                    <table class="table table-bordered table-striped table-sm">
                         <thead>
                             <tr>
                                 <th width="6%" class="text-center">No.</th>
@@ -46,7 +46,7 @@
                                     <td class="text-center">
                                         <img src="{{ asset('storage/files/'. $value->file_name) }}" class="thumbnail-sm" alt="{{ $value->original_file_name }}">
                                     </td>
-                                    <td>{{ $value->original_file_name }}</td>
+                                    <td>{{ Str::limit($value->original_file_name, 60) }}</td>
                                     <td class="text-center">{{ $value->size }}</td>
                                     <td class="text-center">{{ $value->type }}</td>
                                     <td class="text-center">{{ $value->dimension }}</td>

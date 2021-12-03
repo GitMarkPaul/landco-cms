@@ -7,8 +7,6 @@
         <div class="breadcrumb-text">
             <span class="wow fadeInLeft">Latest Updates</span>
             <h2 class="page-title wow fadeInLeft" data-wow-delay="0.2s">Publications</h2>
-
-            <!-- .breadcrumb-nav -->
             <ul class="breadcrumb-nav wow fadeInRight">
                 <li><a href="{{ route('index') }}">Home</a></li>
                 <li class="active">Publications</li>
@@ -18,7 +16,6 @@
 </section>
 <!-- /.breadcrumb-area -->
 
-<!-- .text-block -->
 @if(count($pubs) > 0)
 <section class="section-publications pt-115 pb-115">
     <div class="container" data-js="publications">
@@ -49,14 +46,14 @@
                                     if (!is_null($value->meta_link)) {
                                         $link = $value->meta_link;
                                     } else {
-                                        $link = route('details', $value->slug_url);
+                                        $link = route('details', [$value->date_published, $value->slug_url]);
                                     }
                                 @endphp
                                 <a href="{{ $link }}" target="_blank" rel="noopener" class="card-img-top">
                                     <img src="{{ asset('storage/files/'.$value->file->file_name) }}" alt="Image">
                                 </a>
                                 <div class="card-body">
-                                    <h5 class="mb-0"><a href="{{ $link }}" target="_blank" rel="noopener">{{ Str::limit($value->title, 60) }}</a></h5>
+                                    <h5 class="mb-0"><a href="{{ $link }}" @if(!is_null($value->meta_link)) target="_blank" rel="noopener" @endif>{{ Str::limit($value->title, 60) }}</a></h5>
                                 </div>
                             </div>
                         </div>
