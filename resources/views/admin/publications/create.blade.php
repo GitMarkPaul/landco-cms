@@ -79,7 +79,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="title" class="form-label">Content</label>
+                                        <label for="title" class="form-label">Create New Content (If the article doesn't have a redirection link)</label>
                                         <textarea name="content" class="form-control content-editor" placeholder="Write some content here..">{{ old('content') }}</textarea>
         
                                         @error('content')
@@ -166,7 +166,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col d-none">
                                             <div class="form-group">
                                                 <label for="title" class="form-label">Label</label>
                                                 <input type="text" name="label" class="form-control  @error('label') is-invalid @enderror" value="{{ old('label') }}">
@@ -178,7 +178,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col d-none">
                                             <label for="title" class="form-label">Location</label>
                                             <div class="input-group">
                                                 <span class="input-group-text" id="location"><i class="bi bi-geo-alt"></i></span>
@@ -213,7 +213,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col d-none">
                                             <label for="title" class="form-label">File Link</label>
                                             <div class="input-group">
                                                 <span class="input-group-text" id="file_link"><i class="bi bi-image"></i></span>
