@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Helpers;
+use App\Models\Publication;
+use App\Models\File;
 use Request;
 
 class Helper {
@@ -37,5 +39,15 @@ class Helper {
         }
 
         return round($bytes, 1) . ' ' . $units[$i];
+    }
+
+    public static function numberOfPublications()
+    {
+        return Publication::get()->count();
+    }
+
+    public static function numberOfFiles()
+    {
+        return File::get()->count();
     }
 }

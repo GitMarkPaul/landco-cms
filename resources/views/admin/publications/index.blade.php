@@ -58,8 +58,15 @@
                                             <button class="button secondary sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <i class="bi bi-three-dots text-muted"></i>
                                             </button>
+                                            @php
+                                                if (!is_null($value->meta_link)) {
+                                                    $link = $value->meta_link;
+                                                } else {
+                                                    $link = route('details', [$value->date_published, $value->slug_url]);
+                                                }
+                                            @endphp
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li><a class="dropdown-item" href="{{ $value->meta_link }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Article</a></li>
+                                                <li><a class="dropdown-item" href="{{ $link }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Article</a></li>
                                                 <li><a class="dropdown-item" href="{{ route('pub_edit', [$value->date_published, $value->slug_url]) }}"><i class="bi bi-pencil"></i> Edit Blog</a></li>
                                                 <li><a class="dropdown-item delete" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}"><i class="bi bi-trash"></i> Delete</a></li>
                                             </ul>
