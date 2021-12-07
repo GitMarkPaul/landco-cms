@@ -93,9 +93,9 @@ class PublicationController extends Controller
      * @return void
      */
 
-    public function edit($category_id, $created_at, $slug_url)
+    public function edit($category_id, $id, $slug_url)
     {
-        $pub_details = $this->publication->get_details($slug_url);
+        $pub_details = $this->publication->get_details($id);
         $pub_cats = $this->publication_category->get_pub_cat_data();
 
         return view('admin.publications.edit', compact('pub_details', 'pub_cats'));

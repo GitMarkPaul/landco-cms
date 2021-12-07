@@ -57,6 +57,7 @@
                         <span class="links_name">Dashboard</span>
                     </a>
                 </li>
+                <li class="sidenav-heading text-muted">{{ __('Content') }}</li>
                 <li>
                     <a href="{{ route('pub_index') }}" class="sidebar-item {{ Helper::activeMenu('admin/publications*') }}">
                         <i class="bi bi-newspaper"></i>

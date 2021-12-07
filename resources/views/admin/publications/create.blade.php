@@ -91,6 +91,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-grid">
+                                        <span class="small text-success">https://localhost:8000/publications/sdfsdf</span>
+                                        <a href="" class="text-primary fw-bold">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</a>
+                                        <span class="text-muted">Provident consequuntur odit inventore sit explicabo. Illo dolorem quos omnis minima doloremque dolore, rem molestiae Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore ipsum nobis doloribus laborum illo quibusdam...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-3">

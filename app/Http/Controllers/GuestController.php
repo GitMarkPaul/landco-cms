@@ -8,7 +8,7 @@ use App\Models\Publication;
 use App\Models\Career;
 
 class GuestController extends Controller
-{
+{   
     function __construct()
     {
         $this->publication = new Publication;
@@ -199,9 +199,9 @@ class GuestController extends Controller
         return view('guest.publication', compact('pubs', 'categories'));
     }
 
-    public function details($category_id, $created_at, $slug_url)
+    public function details($category_id, $id, $slug_url)
     {
-        $details = $this->publication->get_details($slug_url);
+        $details = $this->publication->get_details($id);
 
         return view('guest.publication-details', compact('details'));
     }

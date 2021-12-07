@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Vinkla\Hashids\Facades\Hashids;
 
 class Publication extends Model
 {
@@ -116,9 +117,10 @@ class Publication extends Model
         ]);
     }
 
-    public function get_details($slug_url)
+    public function get_details($id)
     {
-        return $this->where('slug_url', $slug_url)->first();
+        $id = Hashids::decode($id);
+        return $this->where('id', $id)->first();
     }
 
     public function get_pub_data()
@@ -167,13 +169,8 @@ class Publication extends Model
         return $this->where('id', decrypt($request->id))->onlyTrashed()->forceDelete();
     }
 
-    public function getDatePublishedAttribute()
-    {
-        return Str::of($this->created_at->format('Y d m s'))->studly();
-    }
-
     public function getPermalinkAttribute()
     {
-        return [Str::slug($this->category->category_name), Str::of($this->created_at->format('Y d m s'))->studly(), $this->slug_url];
+        return [Str::slug($this->category->category_name), Hashids::encode($this->id), $this->slug_url];
     }
 }
