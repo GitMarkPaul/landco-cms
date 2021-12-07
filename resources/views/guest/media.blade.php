@@ -37,7 +37,7 @@
                                         if (!is_null($value->meta_link)) {
                                             $link = $value->meta_link;
                                         } else {
-                                            $link = route('details', [Str::of($value->created_at->format('Y d m s'))->studly(), $value->slug_url]);
+                                            $link = route('details', $value->permalink);
                                         }
                                     @endphp
                                     <a href="{{ $link }}" class="card-img-top">
