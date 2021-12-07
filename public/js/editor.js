@@ -1,11 +1,11 @@
 tinymce.init({
 	selector: 'textarea.content-editor',
 	menubar: false,
-	plugins: 'preview searchreplace autosave autoresize directionality visualblocks visualchars fullscreen imagetools image link charmap hr nonbreaking toc advlist lists wordcount textpattern help charmap code table',
+	plugins: 'searchreplace autoresize fullscreen imagetools image link lists wordcount code table',
     mobile: {
-        plugins: 'preview searchreplace autosave autoresize directionality visualblocks visualchars fullscreen image link charmap hr nonbreaking toc advlist lists wordcount textpattern help charmap code table'
+        plugins: 'searchreplace autoresize fullscreen image link lists wordcount code table'
     }, 
-	toolbar: 'undo redo | bold italic underline strikethrough | fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | charmap | fullscreen  preview | insertfile image link | table | code',
+	toolbar: 'bold italic underline strikethrough | fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor removeformat | | fullscreen  | insertfile image link | table | code',
 	/* enable title field in the Image dialog*/
 	image_title: true,
 	autosave_ask_before_unload: true,
@@ -57,5 +57,6 @@ tinymce.init({
 	},
 	content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
 	height: 800,
-	deprecation_warnings: false
+	deprecation_warnings: false,
+	entity_encoding : "raw"
 });

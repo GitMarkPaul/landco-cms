@@ -38,7 +38,7 @@ class PublicationController extends Controller
 
     public function index()
     {
-        $publications = $this->publication->get_pub_data();
+        $publications = $this->publication->get_paginated_pub_data();
 
         return view('admin.publications.index', compact('publications'));
     }
@@ -93,7 +93,7 @@ class PublicationController extends Controller
      * @return void
      */
 
-    public function edit($created_at, $slug_url)
+    public function edit($category_id, $created_at, $slug_url)
     {
         $pub_details = $this->publication->get_details($slug_url);
         $pub_cats = $this->publication_category->get_pub_cat_data();

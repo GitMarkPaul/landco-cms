@@ -80,7 +80,7 @@ class File extends Model
      */
     public function get_file_data()
     {
-        return $this->orderBy('updated_at', 'DESC')->get();
+        return $this->orderBy('updated_at', 'DESC')->paginate(10);
     }
 
     /**

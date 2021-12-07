@@ -137,6 +137,11 @@ class Publication extends Model
         ]);
     }
 
+    public function get_paginated_pub_data() 
+    {
+        return $this->orderBy('updated_at', 'DESC')->paginate(10);
+    }
+
     public function delete_data($request)
     {
         return $this->findOrFail(decrypt($request->id))->delete();
@@ -165,5 +170,10 @@ class Publication extends Model
     public function getDatePublishedAttribute()
     {
         return Str::of($this->created_at->format('Y d m s'))->studly();
+    }
+
+    public function getPermalinkAttribute()
+    {
+        return [Str::slug($this->category->category_name), Str::of($this->created_at->format('Y d m s'))->studly(), $this->slug_url];
     }
 }

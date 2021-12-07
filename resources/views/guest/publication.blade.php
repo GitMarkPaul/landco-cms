@@ -46,10 +46,10 @@
                                     if (!is_null($value->meta_link)) {
                                         $link = $value->meta_link;
                                     } else {
-                                        $link = route('details', [$value->date_published, $value->slug_url]);
+                                        $link = route('details', $value->permalink);
                                     }
                                 @endphp
-                                <a href="{{ $link }}" target="_blank" rel="noopener" class="card-img-top">
+                                <a href="{{ $link }}" target="_blank" rel="noopener">
                                     <img src="{{ asset('storage/files/'.$value->file->file_name) }}" alt="Image">
                                 </a>
                                 <div class="card-body">

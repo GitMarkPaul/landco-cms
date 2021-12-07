@@ -14,7 +14,7 @@
         </nav>
         <!-- End: Breadcrumb -->
 
-        <div class="row row-cols-1">
+        <div class="row row-cols-1 g-3">
             @if(Session::has('success'))
             <div class="col">
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -42,7 +42,7 @@
                         <tbody>
                             @foreach ($files as $key => $value)
                                 <tr>
-                                    <td class="text-center">{{ ++$key }}</td>
+                                    <td class="text-center">{{ $loop->iteration + $files->firstItem() - 1 }}</td>
                                     <td class="text-center">
                                         <img src="{{ asset('storage/files/'. $value->file_name) }}" class="thumbnail-sm" alt="{{ $value->original_file_name }}">
                                     </td>
@@ -67,7 +67,12 @@
                             @endforeach
                         </tbody>
                     </table>
-           
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-between">
+                    <span>Showing {{ $files->firstItem() }} to {{ $files->lastItem() }} of total {{$files->total() }} entries</span>
+                    {{ $files->links() }}
                 </div>
             </div>
         </div>
@@ -97,8 +102,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="button dark" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="button primary">Rename</button>
                 </div>
             </form>
         </div>
@@ -121,8 +126,8 @@
                     <p>This will remove this post from your blog. You will no longer be able to view or edit it once deleted.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="button" class="button dark" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="button danger">Delete</button>
                 </div>
             </form>
         </div>
@@ -130,7 +135,7 @@
 </div>
 @endsection
 
-@section('scripts')
+@push('scripts')
     <script type="text/javascript">
         $(document).on('click', '.rename', function() {
             $('#file_ren_id').val($(this).data('id'));
@@ -144,4 +149,4 @@
             $('#deleteModal').modal('show');
 		});
     </script>
-@endsection
+@endpush

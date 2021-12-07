@@ -199,7 +199,7 @@ class GuestController extends Controller
         return view('guest.publication', compact('pubs', 'categories'));
     }
 
-    public function details($created_at, $slug_url)
+    public function details($category_id, $created_at, $slug_url)
     {
         $details = $this->publication->get_details($slug_url);
 

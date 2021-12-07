@@ -57,7 +57,7 @@ Route::get('publications/news', [GuestController::class, 'news'])->name('publica
 Route::get('publications/media', [GuestController::class, 'media'])->name('publications.media');
 Route::get('publications/magazine', [GuestController::class, 'magazine'])->name('publications.magazine');
 Route::get('publications', [GuestController::class, 'publications'])->name('publications');
-Route::get('publications/details/{created_at}/{slug_url}', [GuestController::class, 'details'])->name('details');
+Route::get('publications/details/{category_id}/{created_at}/{slug_url}', [GuestController::class, 'details'])->name('details');
 Route::get('careers', [GuestController::class, 'careers'])->name('careers');
 Route::get('careers/{created_at}/{slug}', [GuestController::class, 'career_details'])->name('career_details');
 Route::get('contact-us', [GuestController::class, 'contact_us'])->name('contact_us');
@@ -95,7 +95,7 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'auth'], function() {
         Route::get('listing', [PublicationController::class, 'index'])->name('pub_index');
         Route::get('create', [PublicationController::class, 'create'])->name('pub_create');
         Route::post('store', [PublicationController::class, 'store'])->name('pub_store');
-        Route::get('edit/{created_at}/{slug_url}', [PublicationController::class, 'edit'])->name('pub_edit');
+        Route::get('edit/{category_id}/{created_at}/{slug_url}', [PublicationController::class, 'edit'])->name('pub_edit');
         Route::put('update/{id}', [PublicationController::class, 'update'])->name('pub_update');
         Route::delete('delete', [PublicationController::class, 'delete'])->name('pub_delete');
         Route::post('restore', [PublicationController::class, 'restore'])->name('pub_restore');

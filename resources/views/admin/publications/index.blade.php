@@ -34,6 +34,7 @@
                         <thead>
                             <tr>
                                 <th class="text-center">No.</th>
+                                <th width="5%" class="text-center">Image</th>
                                 <th width="35%">Title</th>
                                 <th>Category</th>
                                 <th>Author</th>
@@ -45,7 +46,10 @@
                         <tbody>
                             @foreach ($publications as $key => $value)
                                 <tr>
-                                    <td class="text-center">{{ ++$key }}</td>
+                                    <td class="text-center">{{ $loop->iteration + $publications->firstItem() - 1 }}</td>
+                                    <td class="text-center">
+                                        <img src="{{ asset('storage/files/'. $value->file->file_name) }}" class="thumbnail-sm" alt="{{ $value->file->original_file_name }}">
+                                    </td>
                                     <td class="w-space-normal">{{ $value->title }}</td>
                                     <td>{{ $value->category->category_name }}</td>
                                     <td>{{ $value->author }}</td>
@@ -62,12 +66,12 @@
                                                 if (!is_null($value->meta_link)) {
                                                     $link = $value->meta_link;
                                                 } else {
-                                                    $link = route('details', [$value->date_published, $value->slug_url]);
+                                                    $link = route('details', $value->permalink);
                                                 }
                                             @endphp
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                 <li><a class="dropdown-item" href="{{ $link }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Article</a></li>
-                                                <li><a class="dropdown-item" href="{{ route('pub_edit', [$value->date_published, $value->slug_url]) }}"><i class="bi bi-pencil"></i> Edit Blog</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('pub_edit', $value->permalink) }}"><i class="bi bi-pencil"></i> Edit Blog</a></li>
                                                 <li><a class="dropdown-item delete" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}"><i class="bi bi-trash"></i> Delete</a></li>
                                             </ul>
                                         </div>
@@ -76,6 +80,12 @@
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-between">
+                    <span>Showing {{ $publications->firstItem() }} to {{ $publications->lastItem() }} of total {{$publications->total() }} entries</span>
+                    {{ $publications->links() }}
                 </div>
             </div>
         </div>

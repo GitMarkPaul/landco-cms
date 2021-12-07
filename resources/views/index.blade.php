@@ -509,7 +509,7 @@
                     if (!is_null($value->meta_link)) {
                         $link = $value->meta_link;
                     } else {
-                        $link = route('details', [$value->date_published, $value->slug_url]);
+                        $link = route('details', $value->permalink);
                     }
                 @endphp
                 @if ($value->category->category_name === 'Blogs')
