@@ -142,11 +142,11 @@
                     </div>
                 </div>
                 <div class="col-xl-12">
-                    <div class="card fixed-bottom position-fixed b-0">
+                    <div class="card position-fb">
                         <div class="card-body">
-                            <div class="d-flex justify-content-end">
-                                <a href="{{ route('careers.index') }}" class="button secondary text-dark mx-3">Back</a>
-                                <button type="submit" class="button success w-m-100 gap-2"><i class="bi bi-send-fill"></i> Publish</button>
+                            <div class="d-flex justify-content-end gap-3">
+                                <a href="{{ route('careers.index') }}" class="button dark text-white">Back</a>
+                                <button type="submit" class="button success">Publish Post</button>
                             </div>
                         </div>
                     </div>
