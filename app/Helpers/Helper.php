@@ -41,16 +41,31 @@ class Helper {
         return round($bytes, 1) . ' ' . $units[$i];
     }
 
+    /**
+     * Count the number of uploaded publications
+     *
+     * @return integer
+     */
     public static function numberOfPublications()
     {
         return Publication::get()->count();
     }
 
+    /**
+     * Count the number of uploaded files
+     *
+     * @return integer
+     */
     public static function numberOfFiles()
     {
         return File::get()->count();
     }
 
+    /**
+     * Get the sum of all uploaded files
+     *
+     * @return integer
+     */
     public static function sumOfFiles()
     {
         return File::get()->sum('size');

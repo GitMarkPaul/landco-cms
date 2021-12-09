@@ -42,6 +42,11 @@ class SettingsController extends Controller
         return view('admin.settings.files', compact('files'));
     }
 
+    /**
+     * File Manager Rename Function
+     *
+     * @return void
+     */
     public function rename(Request $request)
     {
         $user_id = Auth::user()->id;
