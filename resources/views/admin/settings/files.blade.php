@@ -47,7 +47,7 @@
                                         <img src="{{ asset('storage/files/'. $value->file_name) }}" class="thumbnail-sm" alt="{{ $value->original_file_name }}">
                                     </td>
                                     <td>{{ Str::limit($value->original_file_name, 60) }}</td>
-                                    <td class="text-center">{{ $value->size }}</td>
+                                    <td class="text-center">{{ Helper::bytesToHuman($value->size) }}</td>
                                     <td class="text-center">{{ $value->type }}</td>
                                     <td class="text-center">{{ $value->dimension }}</td>
                                     <td class="text-center">{{ $value->updated_at->format('M d, Y') }}</td>

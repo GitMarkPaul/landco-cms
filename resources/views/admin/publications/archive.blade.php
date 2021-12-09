@@ -43,12 +43,12 @@
                                     <td class="text-center">{{ $value->deleted_at->format('M d, Y') }}</td>
                                     <td>
                                         <div class="dropdown d-flex justify-content-center">
-                                            <button class="tf-btn tf-btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <button class="button secondary text-dark sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Settings
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li><a class="dropdown-item restore" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}"><ion-icon name="reload"></ion-icon> Restore</a></li>
-                                                <li><a class="dropdown-item destroy" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}" data-file_name="{{ $value->file->file_name }}"><ion-icon name="trash"></ion-icon>Delete Permanently</a></li>
+                                                <li><a class="dropdown-item restore" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}">Restore</a></li>
+                                                <li><a class="dropdown-item destroy" href="javascript:void(0);" data-id="{{ encrypt($value->id) }}" data-file-id={{ $value->file_id }} data-file_name="{{ $value->file->file_name }}">Delete Permanently</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -78,8 +78,8 @@
                     <p>Are you sure your going to restore this blog?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">Restore</button>
+                    <button type="button" class="button dark" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="button success">Restore</button>
                 </div>
             </form>
         </div>
@@ -97,13 +97,14 @@
                 @method('DELETE')
                 @csrf
                 <input type="hidden" class="form-control" name="id" id="pub_destroy_id">
+                <input type="hidden" class="form-control" name="file_id" id="pub_destroy_file_id">
                 <input type="hidden" class="form-control" name="file_name" id="pub_destroy_file">
                 <div class="modal-body">
                     <p>Are you sure your going to delete this blog permanently?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-danger">Delete Permanently</button>
+                    <button type="button" class="button dark" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="button danger">Delete Permanently</button>
                 </div>
             </form>
         </div>
@@ -111,7 +112,7 @@
 </div>
 @endsection
 
-@section('scripts')
+@push('scripts')
     <script type="text/javascript">
         $(document).on('click', '.restore', function() {
             $('#pub_restore_id').val($(this).data('id'));
@@ -120,8 +121,9 @@
 
         $(document).on('click', '.destroy', function() {
             $('#pub_destroy_id').val($(this).data('id'));
+            $('#pub_destroy_file_id').val($(this).data('file-id'));
             $('#pub_destroy_file').val($(this).data('file_name'));
             $('#destroyModal').modal('show');
 		});
     </script>
-@endsection
+@endpush

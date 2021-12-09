@@ -50,4 +50,9 @@ class Helper {
     {
         return File::get()->count();
     }
+
+    public static function sumOfFiles()
+    {
+        return File::get()->sum('size');
+    }
 }

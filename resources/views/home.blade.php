@@ -40,7 +40,7 @@
                                     <i class="bi bi-image-fill"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <div class="fw-bold fs-5">{{ Helper::numberOfFiles() }}</div>
+                                    <div class="fw-bold fs-5">{{ Helper::numberOfFiles() }} Files ({{ Helper::bytesToHuman(Helper::sumOfFiles()) }})</div>
                                     <small>Total number of uploaded files </small>
                                 </div>
                             </div>

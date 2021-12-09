@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Image;
-use App\Helpers\Helper;
 
 class File extends Model
 {
@@ -35,9 +34,6 @@ class File extends Model
      */
     public function store_file_data($request, $user_id, $role_id)
     {   
-        // Convert the file size to human readable
-        $format_bytes = Helper::bytesToHuman($request->file->getSize());
-        
         // Get the dimension of the file
         $f_width = Image::make($request->file)->width();
         $f_height = Image::make($request->file)->height();
@@ -50,7 +46,7 @@ class File extends Model
             'role_id' => $role_id,
             'original_file_name' => $request->file->getClientOriginalName(),
             'file_name' => $request->file->hashName(),
-            'size' => $format_bytes,
+            'size' => $request->file->getSize(),
             'type' => $request->file->getClientOriginalExtension(),
             'dimension' => $dimension
         ]);
@@ -63,13 +59,20 @@ class File extends Model
      */
     public function update_file_data($request, $user_id, $role_id, $file_id)
     {
+        // Get the dimension of the file
+        $f_width = Image::make($request->file)->width();
+        $f_height = Image::make($request->file)->height();
+
+        // Concatenate the dimension of the given value
+        $dimension = $f_width .' '.'x'.' '.$f_height;
+
         return $this->find($file_id)->update([
             'user_id' => $user_id,
             'role_id' => $role_id,
             'original_file_name' => $request->file->getClientOriginalName(),
             'file_name' => $request->file->hashName(),
             'size' => $request->file->getSize(),
-            'type' => $request->file->getClientOriginalExtension()
+            'type' => $dimension
         ]);
     }
 
