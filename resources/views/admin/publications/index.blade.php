@@ -55,7 +55,11 @@
                                     <td>{{ $value->author }}</td>
                                     <td>{{ $value->created_at->format('M d, Y') }}</td>
                                     <td class="text-center">
-                                        {{ $value->status }}
+                                        @if ($value->status === 'Active')
+                                            <span class="badge success badge-pill">{{ $value->status }}</span>
+                                        @else
+                                            <span class="badge dark badge-pill">{{ $value->status }}</span>
+                                        @endif
                                     </td>
                                     <td>
                                         <div class="dropdown d-flex justify-content-center dropend">

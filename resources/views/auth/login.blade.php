@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-                            <div class="row g-3 mt-3">
+                            <div class="row g-3">
                                 <div class="col-xl-12">
                                     <div class="form-group">
                                         <label for="phone" class="form-label">Email or Username</label>

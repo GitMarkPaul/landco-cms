@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\PublicationCategoryController;
 use App\Http\Controllers\HomeController;
@@ -18,7 +20,7 @@ use App\Http\Controllers\CareerController;
 |
 */
 
-// Guest
+// Guest Route List
 Route::get('/', [GuestController::class, 'index'])->name('index');
 Route::get('about-us', [GuestController::class, 'about_us'])->name('about_us');
 Route::get('projects', [GuestController::class, 'projects'])->name('projects');
@@ -65,16 +67,19 @@ Route::get('terms-of-use', [GuestController::class, 'terms_of_use'])->name('term
 Route::get('privacy-policy', [GuestController::class, 'privacy_policy'])->name('privacy_policy');
 Route::get('hlurb', [GuestController::class, 'hlurb'])->name('hlurb');
 
-# Password Reset
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+// Password Reset
+Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
-Auth::routes();
+// Authentication
+Auth::routes(['register' => false]);
 
+// Redirection route page after login (default)
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+// Admin Route List (CMS)
 Route::group(['prefix' => 'admin/', 'middleware' => 'auth'], function() {
     // Manage Account
     Route::group(['prefix' => 'settings/'], function() {
